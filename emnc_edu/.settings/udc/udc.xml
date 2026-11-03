@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<WebSquare>
+                        
+
+    
+
+    
+
+    
+
+    
+
+    <components>
+                                                
+    
+        
+        
+        
+        
+        <component category="/cm/udc" company="" componentDesc="" componentType="pageComponent" developer="user" disableIcon="" display="udc_fromToCalendar" displaySrc="/cm/udc/fromToCalendar.xml" height="26px" htmlRender="" icon="" id="udc_fromToCalendar" namespaceURI="http://www.inswave.com/websquare" notSupportBrowser="" project="KMS" realType="udc_fromToCalendar" ternId="_cm_udc_fromToCalendar" udc2Component="true" version="" visible="true" width="100%">
+                                                            
+            
+            
+            
+            <properties>
+                                                                                
+                
+                
+                
+                <property bindparent="" default="udc_fromToCal" description="메인화면에서 사용할 UDC ID" maincategory="Basic &amp; ETC" maincategoryorder="01" name="id" necessary="yes" type="string"/>
+                                                                                
+                
+                
+                
+                <property bindparent="" default="" description="Class ID" maincategory="Basic &amp; ETC" maincategoryorder="01" name="class" necessary="no" type="string"/>
+                                                                                
+                
+                
+                
+                <property bindparent="" default="" description="메안화면의 style" maincategory="Basic &amp; ETC" maincategoryorder="01" name="style" necessary="no" type="string"/>
+                                                                                
+                
+                
+                
+                <property bindparent="" default="" description="bind 할 메인화면의  dataMap 컬럼 ID ( 시작날짜 )" maincategory="Data" maincategoryorder="03" name="refStDt" necessary="yes" type="string"/>
+                                                                                
+                
+                
+                
+                <property bindparent="" default="" description="bind 할 메인화면의  dataMap 컬럼 ID ( 종료날짜 )" maincategory="Data" maincategoryorder="03" name="refEdDt" necessary="yes" type="string"/>
+                                                                                
+                
+                
+                
+                <property bindparent="" default="" description="bind 할 메인화면의 dataMap  ID (메인화면의 데이타 맵인 경우   예: ../dataMapid )" maincategory="Data" maincategoryorder="03" name="refDataMap" necessary="yes" type="string"/>
+                                                                            
+            
+            
+            
+            </properties>
+                                                        
+        
+        
+        
+        </component>
+                                    
+        
+        
+            
+        
+        
+            
+        
+        <component category="/cm/udc" company="" componentDesc="" componentType="pageComponent" developer="user" disableIcon="" display="udc_fileMultiUpload" displaySrc="/cm/udc/fileMultiUpload.xml" height="165px" htmlRender="" icon="" id="udc_fileMultiUpload" namespaceURI="http://www.inswave.com/websquare" notSupportBrowser="" project="emnc_edu" realType="udc_fileMultiUpload" ternId="_cm_udc_fileMultiUpload" udc2Component="true" version="" visible="true" width="100%">
+                        
+            <properties>
+                                
+                <property bindparent="" default="" description="desc" maincategory="Basic &amp; ETC" maincategoryorder="01" name="id" necessary="yes" type="string"/>
+                                
+                <property bindparent="" default="" description="desc" maincategory="Basic &amp; ETC" maincategoryorder="01" name="class" necessary="no" type="string"/>
+                                
+                <property bindparent="" default="" description="desc" maincategory="Basic &amp; ETC" maincategoryorder="01" name="style" necessary="no" type="string"/>
+                                
+                <property bindparent="" default="10" description="업로드 가능한 전체 첨부 파일 개수 ( default : 10개 )" maincategory="Action" maincategoryorder="04" name="maxFileCount" necessary="no" type="number"/>
+                                
+                <property bindparent="" default="5242880" description="업로드 가능한 개별 첨부 파일 크기 (단위 : Byte , default : 5,242,880 Byte(5MB) )" maincategory="Action" maincategoryorder="04" name="maxFileSize" necessary="no" type="number"/>
+                                
+                <property bindparent="" default="52428800" description="업로드 가능한 전체 첨부 파일 크기 (단위 : MB , default : 50 )" maincategory="Action" maincategoryorder="04" name="totalFileSize" necessary="no" type="number"/>
+                                
+                <property bindparent="" default="" description="업로드할 파일 확장자 필터" maincategory="Action" maincategoryorder="04" name="filter" necessary="no" type="string"/>
+                                
+                <property bindparent="" default="" description="bind 할 메인화면의 dataLiist ID (메인화면의 데이타 맵인 경우   예: ../dataListid )" maincategory="Data" maincategoryorder="03" name="aliasDataList" necessary="yes" type="string"/>
+                                
+                <property bindparent="" default="" description="upload한 파일 Path를 바인딩할 컬럼ID" maincategory="Data" maincategoryorder="03" name="fileStoredPath" necessary="yes" type="string"/>
+                                
+                <property bindparent="" default="" description="upload한 파일 실제 물리명을 바인딩할 컬럼ID" maincategory="Data" maincategoryorder="03" name="fileStoredNm" necessary="yes" type="string"/>
+                                
+                <property bindparent="" default="" description="UPLOAD하기전에 파일명을 바인딩할 컬럼ID" maincategory="Data" maincategoryorder="03" name="fileOrginNm" necessary="yes" type="string"/>
+                                
+                <property bindparent="" default="" description="파일 시이즈를 바인딩할 컬럼 id" maincategory="Data" maincategoryorder="03" name="fileSize" necessary="yes" type="string"/>
+                                
+                <property bindparent="" default="" description="파일 선택을 위하여 만든 컬럼id" maincategory="Data" maincategoryorder="03" name="chk" necessary="yes" type="string"/>
+                            
+            </properties>
+                        
+            <events>
+                                
+                <property description="파일 업로드 완료후 발생" name="onFileUploadDone" type=""/>
+                                
+                <property description="선택한 파일 삭제 이벤트" name="onFileDelete" type=""/>
+                            
+            </events>
+                    
+        </component>
+            
+        <component category="/cm/udc" company="" componentDesc="" componentType="pageComponent" developer="user" disableIcon="" display="udc_codeSelectBoxBasic" displaySrc="/cm/udc/codeSelectBoxBasic.xml" height="26px" htmlRender="" icon="" id="udc_codeSelectBoxBasic" namespaceURI="http://www.inswave.com/websquare" notSupportBrowser="" project="emnc_edu" realType="udc_codeSelectBoxBasic" ternId="_cm_udc_codeSelectBoxBasic" udc2Component="true" version="" visible="true" width="100%">
+            <properties>
+                <property bindparent="" default="" description="desc" maincategory="Basic &amp; ETC" maincategoryorder="01" name="id" necessary="no" type="string"/>
+                <property bindparent="" default="" description="desc" maincategory="Basic &amp; ETC" maincategoryorder="01" name="class" necessary="no" type="string"/>
+                <property bindparent="" default="" description="desc" maincategory="Basic &amp; ETC" maincategoryorder="01" name="style" necessary="no" type="string"/>
+            </properties>
+        </component>
+    </components>
+</WebSquare>
