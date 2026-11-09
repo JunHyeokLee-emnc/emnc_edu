@@ -96,12 +96,12 @@
 				</w2:dataMap>
 			</w2:dataCollection>
 			<w2:workflowCollection></w2:workflowCollection>
-			<xf:submission id="submission2" action="http://127.0.0.1:62788/juhwi/json/EMP_PERSONAL_POPUP_EXTENDED.json" method="get"
+			<xf:submission id="submission2" action="/juhwi/json/EMP_PERSONAL_POPUP_EXTENDED.json" method="get"
 				mediatype="application/json" ref='data:json,{"action":"all","id":"dataListPersonal"}' target='data:array,{"action":"append","id":"dataListPersonal"}'
 				encoding="UTF-8" instance="" replace="" errorHandler="" customHandler="" mode="asynchronous" processMsg=""
 				ev:submit="scwin.submission2_submit" ev:submitdone="scwin.submission2_submitdone" ev:submiterror="" abortTrigger="">
 			</xf:submission>
-			<xf:submission abortTrigger="" action="http://127.0.0.1:62788/juhwi/json/EMP001.json" customHandler="" encoding="UTF-8"
+			<xf:submission abortTrigger="" action="/juhwi/json/EMP001.json" customHandler="" encoding="UTF-8"
 				errorHandler="" ev:submit="scwin.submission2_submit" ev:submitdone="scwin.submission2_submitdone" ev:submiterror="" id="submission3"
 				instance="" mediatype="application/json" method="get" mode="asynchronous" processMsg=""
 				ref='data:json,{"action":"all","id":"dataListPersonal"}' replace="" target='data:array,[{"action":"append","id":"dataListLicense"},{"action":"append","id":"dataListEducation"},{"action":"append","id":"dataListTraining"},{"action":"append","id":"dataListSkill"},{"action":"append","id":"dataListSkillInventory"}]' style="">
