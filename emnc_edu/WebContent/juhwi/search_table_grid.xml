@@ -284,7 +284,7 @@ function excelDownload(gridView){
 function fn_loadEmp(){
     var sub = $p.getSubmission("submission3");
     console.log(dataSearchParam.get("SEARCH"));
-    sub.action = "http://127.0.0.1:62788/juhwi/json/"+ dataSearchParam.get("SEARCH") +".json";
+    sub.action = "/juhwi/json/"+ dataSearchParam.get("SEARCH") +".json";
     $p.executeSubmission("submission3");
     dataListLicense.setj
     console.log("검색완료");
