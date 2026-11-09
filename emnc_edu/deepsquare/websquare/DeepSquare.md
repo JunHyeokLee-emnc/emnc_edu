@@ -8,7 +8,7 @@
 
 이 프로젝트에는 재사용 가능한 템플릿이 준비되어 있습니다:
 
-**위치**: `C:/WEBSQUARE_DEV_PACK/AI_KO_6.0.0.9/workspace/emnc_edu/WebContent/cm/template/**/*.xml`
+**위치**: `C:/Users/mnc202101/git/emnc_edu/emnc_edu/WebContent/cm/template/**/*.xml`
 
 **구조**:
 ```

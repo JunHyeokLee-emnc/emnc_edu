@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ev="http://www.w3.org/2001/xml-events"
+	xmlns:w2="http://www.inswave.com/websquare"
+	xmlns:xf="http://www.w3.org/2002/xforms">
+	<head>
+		<w2:type>COMPONENT</w2:type>
+		<w2:buildDate />
+		<w2:MSA />
+		<xf:model>
+			<w2:dataCollection baseNode="map">
+				<w2:dataList baseNode="list" repeatNode="map" id="dc_contract">
+					<w2:columnInfo>
+						<w2:column id="no" name="name1" dataType="text"></w2:column>
+						<w2:column id="contractNo" name="name2" dataType="text"></w2:column>
+						<w2:column id="division" name="name4" dataType="text"></w2:column>
+						<w2:column id="contractNm" name="name5" dataType="text"></w2:column>
+						<w2:column id="projectNm" name="name6" dataType="text"></w2:column>
+						<w2:column id="startDate" name="name7" dataType="text"></w2:column>
+						<w2:column id="endDate" name="name8" dataType="text"></w2:column>
+					</w2:columnInfo>
+				</w2:dataList>
+			</w2:dataCollection>
+			<w2:workflowCollection />
+		</xf:model>
+		<w2:mfeSubmission />
+		<w2:layoutInfo />
+		<w2:publicInfo method="" />
+		<script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+    
+};
+
+scwin.contractList = [
+    {
+        no: "1",
+        contractNo: "C2026001",
+        division: "신규",
+        contractNm: "A사 공급계약",
+        projectNm: "ERP 구축 프로젝트",
+        startDate: "2026-01-01",
+        endDate: "2026-12-31"
+    },
+    {
+        no: "2",
+        contractNo: "C2026002",
+        division: "변경",
+        contractNm: "B사 유지보수계약",
+        projectNm: "시스템 유지보수",
+        startDate: "2026-02-01",
+        endDate: "2026-11-30"
+    },
+    {
+        no: "3",
+        contractNo: "C2026003",
+        division: "신규",
+        contractNm: "C사 개발계약",
+        projectNm: "차세대 시스템",
+        startDate: "2026-03-01",
+        endDate: "2026-12-31"
+    },
+    {
+        no: "4",
+        contractNo: "C2026004",
+        division: "연장",
+        contractNm: "A사 유지보수계약",
+        projectNm: "ERP 유지보수",
+        startDate: "2026-04-01",
+        endDate: "2027-03-31"
+    },
+    {
+        no: "5",
+        contractNo: "C2026005",
+        division: "신규",
+        contractNm: "D사 공급계약",
+        projectNm: "물류 시스템",
+        startDate: "2026-05-01",
+        endDate: "2026-12-31"
+    }
+];
+
+
+scwin.btn_search_onclick = function () {
+    // 검색어 가져오기
+    var searchNm = inp_contractNm. getValue();
+
+    // JSON 데이터 검색
+    var result = scwin.contractList.filter(function(item) {
+
+        // 검색어가 없으면 전체 조회
+        if (!searchNm) {
+            return true;
+        }
+
+        // 계약명 포함 여부 확인
+        return item.contractNm.indexOf(searchNm) > -1;
+
+    });
+    // DataList에 결과 바인딩
+    dc_contract.setJSON(scwin.contractList);
+    
+};
+
+scwin.rdo_division_onchange = function () {
+    var division = $p.getComponentById("rdo_division").getValue();
+
+    var result = scwin.contractList.filter(function(item) {
+
+        if (!division || division === "ALL") {
+            return true;
+        }
+
+        return item.division === division;
+    });
+
+    var dc = $p.getComponentById("dc_contract");
+    dc.setJSON(result);
+};
+]]></script>
+	</head>
+	<body ev:onpageload="scwin.onpageload">
+		<xf:group class="sub_contents " id="" style="">
+			<xf:group class="schbox" id="" style="">
+				<xf:group class="schbox_inner" id="" style="">
+					<xf:group adaptive="layout" adaptiveThreshold="768" class="w2tb tbl " id="" style="" tagname="table">
+						<w2:attributes>
+							<w2:summary></w2:summary>
+						</w2:attributes>
+						<xf:group tagname="colgroup">
+							<xf:group style="width:100px;" tagname="col"></xf:group>
+							<xf:group style="" tagname="col"></xf:group>
+						</xf:group>
+						<xf:group class="" id="" style="" tagname="tr">
+							<xf:group class="w2tb_th" style="" tagname="th">
+								<w2:textbox class="req" id="" label="계약명" style=""></w2:textbox>
+							</xf:group>
+							<xf:group class="w2tb_td" style="" tagname="td">
+								<xf:input id="inp_contractNm" style=""></xf:input>
+								<w2:textbox id="" label="계약분류" style="width: 150px;height: 23px;"></w2:textbox>
+								<xf:select1 id="rdo_division" selectedIndex="-1" appearance="full" style="" cols="" rows="" ref=""
+									ev:onbeforeselect="scwin.select11_onbeforeselect" ev:onchange="scwin.rdo_division_onchange">
+									<xf:choices>
+										<xf:item>
+											<xf:label><![CDATA[전체]]></xf:label>
+											<xf:value><![CDATA[ALL]]></xf:value>
+										</xf:item>
+										<xf:item>
+											<xf:label><![CDATA[신규]]></xf:label>
+											<xf:value><![CDATA[신규]]></xf:value>
+										</xf:item>
+										<xf:item>
+											<xf:label><![CDATA[연장]]></xf:label>
+											<xf:value><![CDATA[연장]]></xf:value>
+										</xf:item>
+										<xf:item>
+											<xf:label><![CDATA[변경]]></xf:label>
+											<xf:value><![CDATA[변경]]></xf:value>
+										</xf:item>
+									</xf:choices>
+								</xf:select1>
+							</xf:group>
+						</xf:group>
+					</xf:group>
+				</xf:group>
+				<xf:group class="btn_schbox" id="" style="">
+					<xf:trigger class="btn_cm sch" disabled="" escape="false" id="btn_search" style="" type="button" ev:onclick="scwin.btn_search_onclick">
+						<xf:label><![CDATA[조회]]></xf:label>
+					</xf:trigger>
+				</xf:group>
+			</xf:group>
+			<xf:group adaptiveThreshold="" class="gvwbox" id="" style="">
+				<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="gvw" dataList="data:dc_contract" focusMode="row" id="grd_contract"
+					scrollByColumn="false" scrollByColumnAdaptive="false" style="height: 150px;" visibleRowNum="10">
+					<w2:caption id="caption2" style="" value="this is a grid caption."></w2:caption>
+					<w2:header id="header2" style="">
+						<w2:row id="row3" style="">
+							<w2:column blockSelect="false" displayMode="label" id="no" inputType="text" removeBorderStyle="false"
+								value="No" width="70">
+							</w2:column>
+							<w2:column blockSelect="false" displayMode="label" id="contractNo" inputType="text" removeBorderStyle="false"
+								value="계약번호" width="70">
+							</w2:column>
+							<w2:column blockSelect="false" displayMode="label" id="division" inputType="text" removeBorderStyle="false"
+								value="구분" width="70">
+							</w2:column>
+							<w2:column blockSelect="false" displayMode="label" id="contractNm" inputType="text" removeBorderStyle="false"
+								value="계약명" width="70">
+							</w2:column>
+							<w2:column blockSelect="false" displayMode="label" id="projectNm" inputType="text" removeBorderStyle="false"
+								value="프로젝트명" width="70">
+							</w2:column>
+							<w2:column blockSelect="false" displayMode="label" id="startDate" inputType="text" removeBorderStyle="false"
+								value="시작일자" width="70">
+							</w2:column>
+							<w2:column blockSelect="false" displayMode="label" id="endDate" inputType="text" removeBorderStyle="false"
+								value="종료일자" width="70">
+							</w2:column>
+						</w2:row>
+					</w2:header>
+					<w2:gBody id="gBody2" style="">
+						<w2:row id="row4" style="">
+							<w2:column blockSelect="false" displayMode="label" id="no" inputType="text" removeBorderStyle="false"
+								width="70">
+							</w2:column>
+							<w2:column blockSelect="false" displayMode="label" id="contractNo" inputType="text" removeBorderStyle="false"
+								width="70">
+							</w2:column>
+							<w2:column blockSelect="false" displayMode="label" id="division" inputType="text" removeBorderStyle="false"
+								width="70">
+							</w2:column>
+							<w2:column blockSelect="false" displayMode="label" id="contractNm" inputType="text" removeBorderStyle="false"
+								width="70">
+							</w2:column>
+							<w2:column blockSelect="false" displayMode="label" id="projectNm" inputType="text" removeBorderStyle="false"
+								width="70">
+							</w2:column>
+							<w2:column blockSelect="false" displayMode="label" id="startDate" inputType="text" removeBorderStyle="false"
+								width="70">
+							</w2:column>
+							<w2:column blockSelect="false" displayMode="label" id="endDate" inputType="text" removeBorderStyle="false"
+								width="70">
+							</w2:column>
+						</w2:row>
+					</w2:gBody>
+				</w2:gridView>
+			</xf:group>
+			<xf:group class="pglbox" id="">
+				<w2:pageList class="pgl" displayButtonType="display" displayFormat="#" id="pageList1" pageSize="10" pagingType="0"
+					style="">
+				</w2:pageList>
+			</xf:group>
+		</xf:group>
+	</body>
+</html>
