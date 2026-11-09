@@ -7,458 +7,885 @@
 		<w2:MSA />
 		<xf:model>
 			<w2:dataCollection baseNode="map">
-				<w2:dataList id="dataList1" saveRemovedData="true" style="">
-					<w2:data xmlns="" use="false">
-					</w2:data>
+				<w2:dataList id="dataListPersonal" style="">
+					<w2:data xmlns="" use="false"></w2:data>
 					<w2:columnInfo>
-						<w2:column id="EMP_NO" name="name1" dataType="text"></w2:column>
+						<w2:column id="EMP_CD" name="name1" dataType="text"></w2:column>
 						<w2:column id="EMP_NM" name="name2" dataType="text"></w2:column>
-						<w2:column id="DEPT_CD" name="name3" dataType="text"></w2:column>
-						<w2:column id="DEPT_NM" name="name4" dataType="text"></w2:column>
-						<w2:column id="POSITION_NM" name="name5" dataType="text"></w2:column>
-						<w2:column id="JOB_GRADE" name="name6" dataType="text"></w2:column>
-						<w2:column id="EMP_TYPE" name="name7" dataType="text"></w2:column>
-						<w2:column id="EMAIL" name="name8" dataType="text"></w2:column>
-						<w2:column id="PHONE" name="name9" dataType="text"></w2:column>
-						<w2:column id="JOIN_DATE" name="name10" dataType="text"></w2:column>
-						<w2:column id="STATUS" name="name11" dataType="text"></w2:column>
+						<w2:column id="RRNO" name="name3" dataType="text"></w2:column>
+						<w2:column id="AGE" name="name4" dataType="text"></w2:column>
+						<w2:column id="GENDER" name="name5" dataType="text"></w2:column>
+						<w2:column id="POSITION_NM" name="name6" dataType="text"></w2:column>
+						<w2:column id="EMP_YN" name="name7" dataType="text"></w2:column>
+						<w2:column id="TECH_GRADE" name="name8" dataType="text"></w2:column>
+						<w2:column id="EMAIL" name="name9" dataType="text"></w2:column>
+						<w2:column id="MIL_TYPE" name="name10" dataType="text"></w2:column>
+						<w2:column id="MIL_START_DATE" name="name11" dataType="text"></w2:column>
+						<w2:column id="MIL_END_DATE" name="name12" dataType="text"></w2:column>
+						<w2:column id="MIL_NOTE" name="name13" dataType="text"></w2:column>
+						<w2:column id="DISABILITY_YN" name="name14" dataType="text"></w2:column>
+						<w2:column id="PHONE" name="name15" dataType="text"></w2:column>
+						<w2:column id="ADDRESS" name="name16" dataType="text"></w2:column>
+						<w2:column id="PROFILE_IMG_PATH" name="name17" dataType="text"></w2:column>
+						<w2:column id="PROFILE_IMG_NM" name="name18" dataType="text"></w2:column>
 					</w2:columnInfo>
 				</w2:dataList>
+				<w2:dataList id="dataListLicense" saveRemovedData="true" style="">
+					<w2:data use="false" xmlns=""></w2:data>
+					<w2:columnInfo>
+						<w2:column id="SEQ" name="키" dataType="text"></w2:column>
+						<w2:column id="LICENSE_NM" name="자격증 명" dataType="text"></w2:column>
+						<w2:column id="ISSUER_NM" name="발급처" dataType="text"></w2:column>
+						<w2:column id="ACQ_DATE" name="취득일" dataType="text"></w2:column>
+						<w2:column id="CHK_YN" name="체크여부" dataType="text"></w2:column>
+					</w2:columnInfo>
+				</w2:dataList>
+				<w2:dataList baseNode="list" repeatNode="map" id="dataListEducation">
+					<w2:columnInfo>
+						<w2:column id="SEQ" name="기본키" dataType="text"></w2:column>
+						<w2:column id="SCHOOL_NM" name="학교명" dataType="text"></w2:column>
+						<w2:column id="GRAD_YEAR" name="졸업일자" dataType="text"></w2:column>
+						<w2:column id="DEGREE_CD" name="학위구분" dataType="text"></w2:column>
+						<w2:column id="MAJOR_NM" name="전공학과" dataType="text"></w2:column>
+						<w2:column id="CHK_YN" name="체크여부" dataType="text"></w2:column>
+					</w2:columnInfo>
+				</w2:dataList>
+				<w2:dataList baseNode="list" id="dataListTraining" repeatNode="map" style="">
+					<w2:columnInfo>
+						<w2:column id="SEQ" name="키" dataType="text"></w2:column>
+						<w2:column id="EDU_NM" name="교육명" dataType="text"></w2:column>
+						<w2:column id="EDU_ORG_NM" name="교육기관" dataType="text"></w2:column>
+						<w2:column id="START_YM" name="시작년월" dataType="text"></w2:column>
+						<w2:column id="END_YM" name="종료년월" dataType="text"></w2:column>
+						<w2:column id="CHK_YN" name="체크여부" dataType="text"></w2:column>
+					</w2:columnInfo>
+				</w2:dataList>
+				<w2:dataList baseNode="list" id="dataListSkill" repeatNode="map" style="">
+					<w2:columnInfo>
+						<w2:column id="SEQ" name="키" dataType="text"></w2:column>
+						<w2:column id="SKILL_NM" name="보유기술" dataType="text"></w2:column>
+						<w2:column id="SKILL_LEVEL" name="숙련도" dataType="text"></w2:column>
+						<w2:column id="CHK_YN" name="체크여부" dataType="text"></w2:column>
+					</w2:columnInfo>
+				</w2:dataList>
+				<w2:dataList baseNode="list" id="dataListSkillInventory" repeatNode="map" style="">
+					<w2:columnInfo>
+						<w2:column id="SEQ" name="키" dataType="text"></w2:column>
+						<w2:column id="SORT_ORD" name="순서" dataType="text"></w2:column>
+						<w2:column id="PROJECT_NM" name="프로젝트명" dataType="text"></w2:column>
+						<w2:column id="START_YM" name="참여기간 시작" dataType="text"></w2:column>
+						<w2:column id="END_YM" name="참여기간 종료" dataType="text"></w2:column>
+						<w2:column id="ROLE_NM" name="역할" dataType="text"></w2:column>
+						<w2:column id="CLIENT_NM" name="고객사" dataType="text"></w2:column>
+						<w2:column id="COMPANY_NM" name="소속사" dataType="text"></w2:column>
+						<w2:column id="FIELD_NM" name="분야" dataType="text"></w2:column>
+						<w2:column id="MACHINE_TYPE" name="기종" dataType="text"></w2:column>
+						<w2:column id="OS_NM" name="OS" dataType="text"></w2:column>
+						<w2:column id="LANG_NM" name="언어" dataType="text"></w2:column>
+						<w2:column id="DBMS_NM" name="DBMS" dataType="text"></w2:column>
+						<w2:column id="FRAMEWORK_NM" name="F/W" dataType="text"></w2:column>
+						<w2:column id="UI_NM" name="UI" dataType="text"></w2:column>
+						<w2:column id="TOOL_NM" name="Tool" dataType="text"></w2:column>
+						<w2:column id="ETC" name="기타" dataType="text"></w2:column>
+					</w2:columnInfo>
+				</w2:dataList>
+				<w2:dataMap baseNode="map" id="dataSearchParam">
+					<w2:keyInfo>
+						<w2:key id="SEARCH" name="name1" dataType="text"></w2:key>
+					</w2:keyInfo>
+				</w2:dataMap>
 			</w2:dataCollection>
 			<w2:workflowCollection></w2:workflowCollection>
-			<xf:submission id="submission2" action="http://127.0.0.1:59140/juhwi/json/employee.json" method="get"
-				mediatype="application/json" ref='data:json,{"action":"all","id":"dataList1"}' target='data:array,{"action":"append","id":"dataList1"}' encoding="UTF-8" instance="" replace="" errorHandler="" customHandler=""
-				mode="asynchronous" processMsg="" ev:submit="scwin.submission2_submit" ev:submitdone="scwin.submission2_submitdone" ev:submiterror="" abortTrigger="">
+			<xf:submission id="submission2" action="http://127.0.0.1:62788/juhwi/json/EMP_PERSONAL_POPUP_EXTENDED.json" method="get"
+				mediatype="application/json" ref='data:json,{"action":"all","id":"dataListPersonal"}' target='data:array,{"action":"append","id":"dataListPersonal"}'
+				encoding="UTF-8" instance="" replace="" errorHandler="" customHandler="" mode="asynchronous" processMsg=""
+				ev:submit="scwin.submission2_submit" ev:submitdone="scwin.submission2_submitdone" ev:submiterror="" abortTrigger="">
+			</xf:submission>
+			<xf:submission abortTrigger="" action="http://127.0.0.1:62788/juhwi/json/EMP001.json" customHandler="" encoding="UTF-8"
+				errorHandler="" ev:submit="scwin.submission2_submit" ev:submitdone="scwin.submission2_submitdone" ev:submiterror="" id="submission3"
+				instance="" mediatype="application/json" method="get" mode="asynchronous" processMsg=""
+				ref='data:json,{"action":"all","id":"dataListPersonal"}' replace="" target='data:array,[{"action":"append","id":"dataListLicense"},{"action":"append","id":"dataListEducation"},{"action":"append","id":"dataListTraining"},{"action":"append","id":"dataListSkill"},{"action":"append","id":"dataListSkillInventory"}]' style="">
 			</xf:submission>
 		</xf:model>
 		<w2:layoutInfo>
 		</w2:layoutInfo>
 		<w2:publicInfo method="" />
-		<script lazy="false" type="text/javascript"><![CDATA[
-			scwin.onpageload = function() {
-
-			};
+		<script lazy="false" type="text/javascript"><![CDATA[scwin.onpageload = function() {
+};
 	   
 scwin.submission2_submit = function (e) {
     
 };
 
 scwin.submission2_submitdone = function (e) {
-    var dl = $p.getComponentById("dataList1");
+     var data = dataListPersonal.getAllData();
+    var rowCount = dataListPersonal.getRowCount();
+    console.log(rowCount);
 
-    console.log("===== Submission 완료 =====");
-    console.log("행 개수:", dl.getRowCount());
-
-    if (dl.getRowCount() > 0) {
-        console.log("첫 번째 행:", dl.getRowJSON(0));
-        console.log("사원번호:", dl.getCellData(0, "EMP_NO"));
-        console.log("사원명:", dl.getCellData(0, "EMP_NM"));
+    for(var i = 0; i < rowCount; i++){
+        var chk = dataListPersonal.getCellData(i, "EMP_CD") === dataSearchParam.get("SEARCH");
+        if(chk){
+            dataListPersonal.setRowPosition(i);
+        }
     }
+    console.log("개인 신상 정보 검색 완료");
+};
+
+/**
+ * 데이터 클린 함수
+ */
+function fn_removeAll(){
+    console.log("초기화 버튼 클릭");
+    dataListEducation.removeAll();
+    dataListLicense.removeAll();
+    dataListSkill.removeAll();
+    dataListSkillInventory.removeAll();
+    dataListTraining.removeAll();
+}
+/**
+ * 팝업창 함수
+ */
+function fn_popup(){
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+
+    var w = Math.min(1000, Math.max(320, width * 0.8));
+    var h = Math.min(1000, Math.max(400, height * 0.8));
+
+    var t = Math.max(0, (height - h)/2);
+    var l = Math.max(0, (width - w)/2);
+
+    // 팝업 생성 옵션 설정
+    let dataObject = {
+        type: "json",
+        name: "paramData",
+        data: { "EMP_CD": "EMP001" }
+    };
+
+    let options = {
+        id: "popup1",
+        type: "wframePopup",
+        width: w + "px",
+        height: "450px",
+        // height: h + "px",
+        top: t + "px",
+        left: l + "px",
+        popupName: "관련자인명조회",
+        modal: true,
+        resizable: true,
+        // closeAction : "scwin.popup_closeAction", // [선택] 팝업의 닫기 버튼을 클릭했을 때 실행할 함수명
+        dataObject: dataObject
+    };
+
+    // 팝업 생성
+    $p.openPopup("/juhwi/EMP_POPUP.xml", options);
+
+    // 팝업 창에서 전달받은 데이터 확인
+    // let paramDt = $p.getParameter("paramData");
+}
+
+
+
+
+
+
+
+
+
+ // 팝업 생성 옵션의 closeAction 함수 정의 예시
+ scwin.popup_closeAction = function (key) {
+    fn_removeAll();//비우기
+    ipt_name_kr.setValue(key);//키 세팅
+    fn_loadEmp(); //바로 검색
+    return true; //팝업 닫기 (반환 값이 true인 경우만 팝업이 닫힘)
+ };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * 초기화 버튼
+ */
+scwin.btn_clear_onclick = function (e) {
+	fn_removeAll();
 };
 
 scwin.btn_search_onclick = function (e) {
-    console.log("클릭");
-    $p.executeSubmission("submission2");
-    console.log("dataList1:", $p.getComponentById("dataList1"));
-    console.log("grd_employee:", $p.getComponentById("grd_employee"));
-    var dl = $p.getComponentById("dataList1");
-
-console.log("행 개수:", dl.getRowCount());
-
-for (var i = 0; i < dl.getRowCount(); i++) {
-    console.log("행 " + i + ":", dl.getRowJSON(i));
-}
+    // $p.executeSubmission("submission2");
+    // $p.executeSubmission("submission3");
+    fn_removeAll();
+    fn_loadEmp();
 };
-]]></script>
+
+/**
+ * 행 추가
+ */
+function addRow(dataList){
+    dataList.insertRow(0);
+}
+/**
+ * 행 삭제
+ */
+function deleteRow(dataList){
+    var rowCount = dataList.getRowCount();
+    var deleteCount = 0;
+    for(var i = rowCount - 1; i >= 0; i--){
+        var chkYn = dataList.getCellData(i, "CHK_YN");
+        if(chkYn){
+            dataList.removeRow(i);
+            deleteCount++;
+        }
+    }
+    if(deleteCount == 0){
+        var idx = dataList.getRowPosition();
+        if(idx != null || idx != undefined){
+            dataList.removeRow(idx);
+            deleteCount++;
+        }
+    }
+    if(deleteCount == 0){
+        alert("삭제할 행이 없습니다.");
+    }else{
+        alert(deleteCount + "건이 삭제되었습니다.");
+    }
+}
+/**
+ * 액셀 다운로드
+ */
+function excelDownload(gridView){
+    var excelOpt = {};  // 엑셀 다운로드 옵션
+    excelOpt.fileName = "excelEduData.xls";
+    gridView.advancedExcelDownload(excelOpt);
+}
+/**
+ * 직원 검색
+ */
+function fn_loadEmp(){
+    var sub = $p.getSubmission("submission3");
+    console.log(dataSearchParam.get("SEARCH"));
+    sub.action = "http://127.0.0.1:62788/juhwi/json/"+ dataSearchParam.get("SEARCH") +".json";
+    $p.executeSubmission("submission3");
+    dataListLicense.setj
+    console.log("검색완료");
+    $p.executeSubmission("submission2");
+}
+
+
+
+/**
+ * 액셀 업로드
+ */
+function excelUpload(gridView, excelOpt){
+    if(excelOpt === undefined){
+        var excelOpt = {};
+        excelOpt.startRowIndex = 1;
+        gridView.advancedExcelUpload(excelOpt);
+    }else{
+        gridView.advancedExcelUpload(excelOpt);
+    }
+}
+// 학력
+scwin.btn_educationAdd_onclick = function (e) {
+    addRow(dataListEducation);
+};
+scwin.btn_educationDelete_onclick = function (e) {
+    deleteRow(dataListEducation);
+};
+scwin.btn_educationDownload_onclick = function (e) {
+    excelDownload(grp_education);
+};
+scwin.btn_educationUpload_onclick = function (e) {
+    excelUpload(grp_education);
+};
+
+
+//자격증
+scwin.btn_licenseAdd_onclick = function (e) {
+	addRow(dataListLicense);
+};
+scwin.btn_licenseDelete_onclick = function (e) {
+	deleteRow(dataListLicense);
+};
+scwin.btn_licenseDownload_onclick = function (e) {
+	excelDownload(grp_license);
+};
+scwin.btn_licenseUpload_onclick = function (e) {
+	excelUpload(grp_license);
+};
+
+// 교육기관
+scwin.btn_tran_addR_onclick = function (e) {
+	addRow(dataListTraining);
+};
+scwin.btn_tran_del_onclick = function (e) {
+	deleteRow(dataListTraining);
+};
+scwin.btn_tran_down_onclick = function (e) {
+	excelDownload(grp_training);
+};
+scwin.btn_tran_up_onclick = function (e) {
+	excelUpload(grp_training);
+};
+
+// 기술
+scwin.btn_skill_add_onclick = function (e) {
+	addRow(dataListSkill);
+};
+scwin.btn_skill_del_onclick = function (e) {
+	deleteRow(dataListSkill);
+};
+scwin.btn_skill_down_onclick = function (e) {
+	excelDownload(grp_skill);
+};
+scwin.btn_skill_up_onclick = function (e) {
+	excelUpload(grp_skill);
+};
+
+// 이력
+scwin.btn_inv_add_onclick = function (e) {
+	addRow(dataListSkillInventory);
+};
+scwin.btn_inv_del_onclick = function (e) {
+	deleteRow(dataListSkillInventory);
+};
+scwin.btn_inv_down_onclick = function (e) {
+	excelDownload(grp_inv);
+};
+scwin.btn_inv_up_onclick = function (e) {
+    var excelOpt = {};
+    excelOpt.startRowIndex = 2;
+	excelUpload(grp_inv, excelOpt);
+};
+
+scwin.trigger2_onclick = function (e) {
+	fn_popup();
+};]]></script>
 	</head>
 	<body ev:onpageload="scwin.onpageload">
-		<xf:group class="sub_contents " id="" style="">
+		<xf:group class="sub_contents " id="btn_tran_add" style="">
 			<xf:group class="pgtbox" id="" style="">
 				<w2:textbox class="pgt_tit" id="" label="개발자정보관리" style="" tagname=""></w2:textbox>
 				<xf:group class="breadcrumb" id="" style="">
-					<xf:group id="" style="" tagname="ul">
-						<xf:group class="home" id="" style="" tagname="li">
-							<w2:anchor id="" outerDiv="false" style="">
-								<xf:label><![CDATA[Home]]></xf:label>
-							</w2:anchor>
-						</xf:group>
-						<xf:group id="" style="" tagname="li">
-							<w2:anchor id="" outerDiv="false" style="">
-								<xf:label><![CDATA[1Depth Menu]]></xf:label>
-							</w2:anchor>
-						</xf:group>
-						<xf:group id="" style="" tagname="li">
-							<w2:anchor id="" outerDiv="false" style="">
-								<xf:label><![CDATA[2Depth Menu]]></xf:label>
-							</w2:anchor>
-						</xf:group>
-						<xf:group id="" style="" tagname="li">
-							<w2:span id="" label="3Depth Menu" style=""></w2:span>
-						</xf:group>
-					</xf:group>
 				</xf:group>
-				<xf:trigger class="btn_fav" id="" style="" type="button">
-					<xf:label></xf:label>
-				</xf:trigger>
 			</xf:group>
 			<xf:group class="schbox" id="" style="">
 				<xf:group class="schbox_inner" id="" style="">
-					<xf:group class="w2tb tbl " id="" style="" tagname="table" adaptive="layout" adaptiveThreshold="768">
-						<w2:attributes>
-							<w2:summary></w2:summary>
-						</w2:attributes>
-						<xf:group tagname="colgroup">
-							<xf:group style="width:77px;" tagname="col"></xf:group>
-							<xf:group style="" tagname="col"></xf:group>
-							<xf:group style="width:100px;" tagname="col"></xf:group>
-							<xf:group style="" tagname="col"></xf:group>
-						</xf:group>
-						<xf:group class="" id="grp_searchArea" style="" tagname="tr">
-							<xf:group class="w2tb_th" style="" tagname="th">
-								<w2:textbox class="req" id="lab_name" label="개발자ID" style=""></w2:textbox>
-							</xf:group>
-							<xf:group class="w2tb_td" style="width:100%;" tagname="td">
-								<xf:input style="width:150px;" id="ipt_name_kr" placeholder="" class=""></xf:input>
-								<xf:trigger class="btn_cm sch" disabled="" escape="false" ev:onclick="scwin.btn_search_onclick"
-									id="trigger2" style="" type="button">
-									<xf:label><![CDATA[개발자찾기]]></xf:label>
-								</xf:trigger>
-								<xf:input class="" id="ipt_name" placeholder="" style="width:150px;"></xf:input>
-								<xf:input class="" id="ipt_ssn" placeholder="" style="width:150px;"></xf:input>
-
-								<xf:group class="btn_schbox" id="" style="display:inline; position:absolute; right:5px;">
-									<xf:group style="" id="" class="btn_schbox">
-										<xf:trigger ev:onclick="scwin.btn_search_onclick" disabled="" style="" id="btn_clear" label="조회"
-											type="button" class="btn_cm sch" escape="false">
-											<xf:label><![CDATA[초기화]]></xf:label>
-										</xf:trigger>
-										<xf:trigger class="btn_cm sch" disabled="" escape="false" ev:onclick="scwin.btn_search_onclick"
-											id="trigger7" label="조회" style="" type="button">
-											<xf:label><![CDATA[조회]]></xf:label>
-										</xf:trigger>
-										<xf:trigger class="btn_cm sch" disabled="" escape="false" ev:onclick="scwin.btn_search_onclick"
-											id="trigger8" label="조회" style="" type="button">
-											<xf:label><![CDATA[삭제]]></xf:label>
-										</xf:trigger>
-									</xf:group>
-								</xf:group>
-							</xf:group>
+					<xf:group style="display:inline; position:absolute; right:5px;" id="" class="btn_schbox">
+						<xf:group style="" id="" class="btn_schbox">
+							<xf:trigger ev:onclick="scwin.btn_clear_onclick" disabled="" style="" id="btn_clear" label="초기화" type="button"
+								class="btn_cm sch" escape="false">
+								<xf:label><![CDATA[초기화]]></xf:label>
+							</xf:trigger>
+							<xf:trigger ev:onclick="scwin.btn_search_onclick" disabled="" style="" id="trigger7" label="조회" type="button"
+								class="btn_cm sch" escape="false" ev:onblur="">
+								<xf:label><![CDATA[조회]]></xf:label>
+							</xf:trigger>
 						</xf:group>
 					</xf:group>
+					<xf:group id="" style="display:flex; gap:12px 8px; flex-wrap:wrap; align-items:center;">
+						<xf:group id="" style="display:inline-flex; gap:8px; align-items:center;"><w2:textbox style="display:inline-flex;" id="lab_name" label="개발자ID" class="req"></w2:textbox><xf:input style="display:inline-flex; width:150px;" id="ipt_name_kr" placeholder="" class="" editFormat="" applyFormat="display" displayFormat="" ref="data:dataSearchParam.SEARCH"></xf:input></xf:group><xf:trigger ev:onclick="scwin.trigger2_onclick" disabled="" style="display:inline-flex;" id="trigger2" label="개발자찾기" type="button"
+							class="btn_cm sch" escape="false">
+							<xf:label><![CDATA[개발자찾기]]></xf:label>
+						</xf:trigger>
+						<xf:group id="" style="display:inline-flex; gap:8px;"></xf:group>
+					<xf:group id="" style="display:inline-flex; gap:8px;"></xf:group></xf:group>
 				</xf:group>
 			</xf:group>
 			<xf:group class="titbox" id="" style="">
 				<w2:textbox class="" id="" label="개인 신상 정보" style="" tagname="h3"></w2:textbox>
-				<xf:group class="rt" id="" style="">
-				</xf:group>
+				<xf:group class="rt" id="" style=""></xf:group>
 			</xf:group>
-			<xf:group class="schbox" id="" style="">
+			<xf:group class="schbox" id="" style="display:block;">
 				<xf:group class="schbox_inner" id="" style="">
-					<xf:group adaptive="layout" adaptiveThreshold="768" class="w2tb tbl " id="" style="height:90px;" tagname="table">
-						<w2:attributes>
-							<w2:summary></w2:summary>
-						</w2:attributes>
-						<xf:group class="" id="group1" style="" tagname="tr">
-							<xf:group class="w2tb_th" style="display:none;" tagname="th"></xf:group>
-							<xf:group class="w2tb_td" style="width:100%; display:inline-flex; gap:8px; flex-direction:row; flex-wrap:wrap;"
-								tagname="td">
-								<xf:group id="" style="display:flex; width:220px; gap:8px;">
-									<w2:textbox style="" id="txt_kr_name" label="한글성명" class="w2group w2tb_th"></w2:textbox>
-									<xf:input style="width:100px;" id="ipt_kr_name" placeholder="" class=""></xf:input>
-								</xf:group>
-								<xf:group id="" style="display:flex; width:220px; gap:8px;">
-									<w2:textbox style="" id="textbox8" label="주민등록번호" class="w2group w2tb_th"></w2:textbox>
-									<xf:input style="width:100px;" id="input10" placeholder="" class=""></xf:input>
-								</xf:group>
-								<xf:group id="" style="display:flex; width:220px; gap:8px;">
-									<w2:textbox style="" id="textbox9" label="만나이" class="w2group w2tb_th"></w2:textbox>
-									<xf:input style="width:100px;" disabled="true" id="input11" placeholder="" class=""></xf:input>
-								</xf:group>
-								<xf:group id="" style="display:flex; width:220px; gap:8px;">
-									<w2:textbox style="" id="textbox10" label="성별" class="w2group w2tb_th"></w2:textbox>
-									<xf:select1 submenuSize="auto" ref="" appearance="minimal" disabledClass="w2selectbox_disabled"
-										chooseOption="" style="width:90px; height:31px;" disabled="false" id="" allOption="" direction="auto">
-										<xf:choices>
-											<xf:item>
-												<xf:label><![CDATA[해당없음]]></xf:label>
-												<xf:value><![CDATA[]]></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[남성]]></xf:label>
-												<xf:value><![CDATA[]]></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[여성]]></xf:label>
-												<xf:value><![CDATA[]]></xf:value>
-											</xf:item>
-										</xf:choices>
-									</xf:select1>
-								</xf:group>
-								<xf:group id="" style="display:flex; width:220px; gap:8px;">
-									<w2:textbox style="" id="textbox11" label="직급" class="w2group w2tb_th"></w2:textbox>
-									<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled"
-										chooseOption="" disabled="false" style="width:120px; height:31px;" allOption="" id="" direction="auto">
-										<xf:choices>
-											<xf:item>
-												<xf:label><![CDATA[사원]]></xf:label>
-												<xf:value><![CDATA[]]></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[주임]]></xf:label>
-												<xf:value><![CDATA[]]></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[대리]]></xf:label>
-												<xf:value><![CDATA[]]></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[과장]]></xf:label>
-												<xf:value><![CDATA[]]></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[차장]]></xf:label>
-												<xf:value><![CDATA[]]></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[부장]]></xf:label>
-												<xf:value><![CDATA[]]></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[해당없음]]></xf:label>
-												<xf:value><![CDATA[]]></xf:value>
-											</xf:item>
-										</xf:choices>
-									</xf:select1>
-								</xf:group>
-								<xf:group id="" style="display:flex; width:220px; gap:8px;">
-									<w2:textbox style="" id="textbox12" label="직원여부" class="w2group w2tb_th"></w2:textbox>
-									<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled"
-										chooseOption="" disabled="false" style="width:80px; height:31px;" allOption="" id="" direction="auto">
-										<xf:choices>
-											<xf:item>
-												<xf:label><![CDATA[Yes]]></xf:label>
-												<xf:value><![CDATA[]]></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[No]]></xf:label>
-												<xf:value><![CDATA[]]></xf:value>
-											</xf:item>
-										</xf:choices>
-									</xf:select1>
-								</xf:group>
-								<xf:group style="display:flex; width:220px; gap:8px;" id="">
-									<w2:textbox style="" id="textbox13" label="기술자등급" class="w2group w2tb_th"></w2:textbox>
-									<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled"
-										chooseOption="" disabled="false" style="width:120px; height:31px;" allOption="" id="" direction="auto">
-										<xf:choices>
-											<xf:item>
-												<xf:label><![CDATA[01:기술사]]></xf:label>
-												<xf:value></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[02:특급기술자]]></xf:label>
-												<xf:value></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[11:고급기술자]]></xf:label>
-												<xf:value></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[12:중급기술자]]></xf:label>
-												<xf:value></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[13:초급기술자]]></xf:label>
-												<xf:value></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[21:고급기능자]]></xf:label>
-												<xf:value></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[22:중급기능자]]></xf:label>
-												<xf:value></xf:value>
-											</xf:item>
-											<xf:item>
-												<xf:label><![CDATA[23:초급기능자]]></xf:label>
-												<xf:value></xf:value>
-											</xf:item>
-										</xf:choices>
-									</xf:select1>
-								</xf:group>
-								<xf:group style="display:flex; width:220px; gap:8px;" id="">
-									<w2:textbox style="" id="textbox14" label="이메일" class="w2group w2tb_th"></w2:textbox>
-									<xf:input style="width:100px;" id="input13" placeholder="" class=""></xf:input>
-								</xf:group>
-								<xf:group style="display:flex; width:220px; gap:8px;" id="">
-									<w2:textbox style="" id="textbox15" label="복무역종" class="w2group w2tb_th"></w2:textbox>
-									<xf:input style="width:100px;" id="input14" placeholder="" class=""></xf:input>
-								</xf:group>
-								<xf:group style="display:flex; width:440px; gap:8px;" id="">
-									<w2:textbox style="" id="textbox16" label="복무기간" class="w2group w2tb_th"></w2:textbox>
-									<w2:inputCalendar style="width:150px; height:31px; margin-left:8px;" id=""
-										calendarValueType="yearMonthDate">
-									</w2:inputCalendar>
-									<w2:textbox style="" id="textbox17" label="~" class="w2group w2tb_th"></w2:textbox>
-									<w2:inputCalendar style="width:150px; height:31px;" id="" calendarValueType="yearMonthDate"></w2:inputCalendar>
-								</xf:group>
-								<xf:group id="" style="display:flex; width:220px; gap:8px;">
-									<w2:textbox class="w2group w2tb_th" id="textbox18" label="병역사항비고" style=""></w2:textbox>
-									<xf:input class="" id="input16" placeholder="" style="width:100px;"></xf:input>
-								</xf:group>
-								<xf:group id="" style="display:flex; width:220px; gap:8px;">
-									<w2:textbox class="w2group w2tb_th" id="textbox21" label="연락처" style=""></w2:textbox>
-									<xf:input class="" id="input19" placeholder="" style="width:150px;"></xf:input>
-								</xf:group>
-								<xf:group id="" style="display:flex; width:220px; gap:8px;">
-									<w2:textbox class="w2group w2tb_th" id="textbox22" label="주소" style=""></w2:textbox>
-									<xf:input class="" id="input20" placeholder="" style="width:150px;"></xf:input>
-								</xf:group>
-							</xf:group>
+					<xf:group id=""
+						style="display:flex; flex-direction:row; flex-wrap:wrap; align-content:flex-start; align-items:center; gap:15px; width:100%; height:auto; box-sizing:border-box;">
+						<xf:group style="display:flex; width:17rem; height:31px; gap:8px;" id="">
+							<w2:textbox style="display:flex; align-items:center; width:5.5rem;" id="txt_kr_name" label="한글성명" class="w2group w2tb_th"></w2:textbox>
+							<xf:input style="flex:1;" id="ipt_kr_name" placeholder="" class="" ref="data:dataListPersonal.EMP_NM"></xf:input>
+						</xf:group>
+						<xf:group style="display:flex; width:17rem; height:31px; gap:8px;" id="">
+							<w2:textbox style="display:flex; align-items:center; width:5.5rem;" id="textbox8" label="주민등록번호" class="w2group w2tb_th"></w2:textbox>
+							<xf:input style="flex:1;" id="input10" placeholder="" class="" applyFormat="all" editFormat="{######}-{#######}" ref="data:dataListPersonal.RRNO"></xf:input>
+						</xf:group>
+						<xf:group style="display:flex; width:17rem; height:31px; gap:8px;" id="">
+							<w2:textbox style="display:flex; align-items:center; width:5.5rem;" id="textbox9" label="만나이" class="w2group w2tb_th"></w2:textbox>
+							<xf:input style="flex:1;" disabled="true" id="input11" placeholder="" class="" applyFormat="all" editFormat="" ref="data:dataListPersonal.AGE"></xf:input>
+						</xf:group>
+						<xf:group style="display:flex; width:17rem; height:31px; gap:8px;" id="">
+							<w2:textbox style="display:flex; align-items:center; width:5.5rem;" id="textbox10" label="성별" class="w2group w2tb_th"></w2:textbox>
+							<xf:select1 submenuSize="auto" ref="data:dataListPersonal.GENDER" appearance="minimal"
+								disabledClass="w2selectbox_disabled" chooseOption="" style="flex:1;" disabled="false" id="" allOption="" direction="auto">
+								<xf:choices>
+									<xf:item>
+										<xf:label><![CDATA[해당없음]]></xf:label>
+										<xf:value><![CDATA[해당없음]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[남성]]></xf:label>
+										<xf:value><![CDATA[남성]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[여성]]></xf:label>
+										<xf:value><![CDATA[여성]]></xf:value>
+									</xf:item>
+								</xf:choices>
+							</xf:select1>
+						</xf:group>
+						<xf:group style="display:flex; width:17rem; height:31px; gap:8px;" id="">
+							<w2:textbox style="display:flex; align-items:center; width:5.5rem;" id="textbox11" label="직급" class="w2group w2tb_th"></w2:textbox>
+							<xf:select1 ref="data:dataListPersonal.POSITION_NM" submenuSize="auto" appearance="minimal"
+								disabledClass="w2selectbox_disabled" chooseOption="" disabled="false" style="flex:1;" allOption="" id="" direction="auto">
+								<xf:choices>
+									<xf:item>
+										<xf:label><![CDATA[사원]]></xf:label>
+										<xf:value><![CDATA[사원]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[주임]]></xf:label>
+										<xf:value><![CDATA[주임]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[대리]]></xf:label>
+										<xf:value><![CDATA[대리]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[과장]]></xf:label>
+										<xf:value><![CDATA[과장]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[차장]]></xf:label>
+										<xf:value><![CDATA[차장]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[부장]]></xf:label>
+										<xf:value><![CDATA[부장]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[해당없음]]></xf:label>
+										<xf:value><![CDATA[해당없음]]></xf:value>
+									</xf:item>
+								</xf:choices>
+							</xf:select1>
+						</xf:group>
+						<xf:group style="display:flex; width:17rem; height:31px; gap:8px;" id="">
+							<w2:textbox style="display:flex; align-items:center; width:5.5rem;" id="textbox12" label="직원여부" class="w2group w2tb_th"></w2:textbox>
+							<xf:select1 ref="data:dataListPersonal.EMP_YN" submenuSize="auto" appearance="minimal"
+								disabledClass="w2selectbox_disabled" chooseOption="" disabled="false" style="flex:1;" allOption="" id="" direction="auto">
+								<xf:choices>
+									<xf:item>
+										<xf:label><![CDATA[Yes]]></xf:label>
+										<xf:value><![CDATA[Yes]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[No]]></xf:label>
+										<xf:value><![CDATA[No]]></xf:value>
+									</xf:item>
+								</xf:choices>
+							</xf:select1>
+						</xf:group>
+						<xf:group style="display:flex; width:17rem; height:31px; gap:8px;" id="">
+							<w2:textbox style="display:flex; align-items:center; width:5.5rem;" id="textbox13" label="기술자등급" class="w2group w2tb_th"></w2:textbox>
+							<xf:select1 ref="data:dataListPersonal.TECH_GRADE" submenuSize="auto" appearance="minimal"
+								disabledClass="w2selectbox_disabled" chooseOption="" disabled="false" style="flex:1;" allOption="" id="" direction="auto">
+								<xf:choices>
+									<xf:item>
+										<xf:label><![CDATA[01:기술사]]></xf:label>
+										<xf:value><![CDATA[01:기술사]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[02:특급기술자]]></xf:label>
+										<xf:value><![CDATA[02:특급기술자]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[11:고급기술자]]></xf:label>
+										<xf:value><![CDATA[11:고급기술자]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[12:중급기술자]]></xf:label>
+										<xf:value><![CDATA[12:중급기술자]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[13:초급기술자]]></xf:label>
+										<xf:value><![CDATA[13:초급기술자]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[21:고급기능자]]></xf:label>
+										<xf:value><![CDATA[21:고급기능자]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[22:중급기능자]]></xf:label>
+										<xf:value><![CDATA[22:중급기능자]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[23:초급기능자]]></xf:label>
+										<xf:value><![CDATA[23:초급기능자]]></xf:value>
+									</xf:item>
+								</xf:choices>
+							</xf:select1>
+						</xf:group>
+						<xf:group style="display:flex; width:17rem; height:31px; gap:8px;" id="">
+							<w2:textbox style="display:flex; align-items:center; width:5.5rem;" id="textbox14" label="이메일" class="w2group w2tb_th"></w2:textbox>
+							<xf:input style="flex:1;" id="input13" placeholder="" class="" ref="data:dataListPersonal.EMAIL"></xf:input>
+						</xf:group>
+						<xf:group style="display:flex; width:17rem; height:31px; gap:8px;" id="">
+							<w2:textbox style="display:flex; align-items:center; width:5.5rem;" id="textbox15" label="복무역종" class="w2group w2tb_th"></w2:textbox>
+							<xf:input style="flex:1;" id="input14" placeholder="" class="" ref="data:dataListPersonal.MIL_TYPE"></xf:input>
+						</xf:group>
+						<xf:group style="display:flex; width:calc(34rem + 15px); height:31px; gap:8px;" id="">
+							<w2:textbox style="display:flex; align-items:center; width:5.5rem;" id="textbox16" label="복무기간" class="w2group w2tb_th"></w2:textbox>
+							<w2:inputCalendar style="height:31px; flex:1;" id="" calendarValueType="yearMonthDate" ref="data:dataListPersonal.MIL_START_DATE">
+							</w2:inputCalendar>
+							<w2:textbox style="align-items:center;" id="textbox17" label="~" class="w2group w2tb_th"></w2:textbox>
+							<w2:inputCalendar style="height:31px; flex:1;" id="" calendarValueType="yearMonthDate" ref="data:dataListPersonal.MIL_END_DATE"></w2:inputCalendar>
+						</xf:group>
+						<xf:group style="display:flex; width:17rem; height:31px; gap:8px;" id="">
+							<w2:textbox style="display:flex; align-items:center; width:5.5rem;" id="textbox18" label="병역사항비고" class="w2group w2tb_th"></w2:textbox>
+							<xf:input style="flex:1;" id="input16" placeholder="" class="" ref="data:dataListPersonal.MIL_NOTE"></xf:input>
+						</xf:group>
+						<xf:group style="display:flex; width:17rem; height:31px; gap:8px;" id="">
+							<w2:textbox style="display:flex; align-items:center; width:5.5rem;" id="textbox21" label="연락처" class="w2group w2tb_th"></w2:textbox>
+							<xf:input style="flex:1;" id="input19" placeholder="" class="" editFormat="{###}-{####}-{####}" ref="data:dataListPersonal.PHONE"></xf:input>
+						</xf:group>
+						<xf:group style="display:flex; width:calc(34rem + 15px); height:31px; gap:8px;" id="">
+							<w2:textbox style="display:flex; align-items:center; width:5.5rem;" id="textbox22" label="주소" class="w2group w2tb_th"></w2:textbox>
+							<xf:input style="flex:1;" id="input20" placeholder="" class="" ref="data:dataListPersonal.ADDRESS"></xf:input>
 						</xf:group>
 					</xf:group>
 				</xf:group>
 			</xf:group>
-			<xf:group adaptiveThreshold="" class="gvwbox" id="" style="display:flex;">
-				<xf:image src="" style="display:inline-block; width:20%; height:430px;" id="" disabled="false" title="사진"></xf:image>
-				<xf:group id="" style="display:inline-block; width:40%; height:430px;">
-					<w2:gridView scrollByColumnAdaptive="false" focusMode="row" dataList="data:dataList1" scrollByColumn="false"
-						style="width:100%; height:400px;" autoFit="allColumn" id="grd_employee" class="gvw"
-						checkReadOnlyOnPasteEnable="">
-						<w2:caption style="" id="caption2" value="this is a grid caption."></w2:caption>
-						<w2:header style="" id="header2">
-							<w2:row style="" id="row3">
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="column12" value="사번"
-									blockSelect="false" displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="column11" value="이름"
-									blockSelect="false" displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="column10" value="부서코드"
-									blockSelect="false" displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="column9" value="부서명"
-									blockSelect="false" displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="column8" value="직급명"
-									blockSelect="false" displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="column7" value="직위" blockSelect="false"
-									displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="column6" value="계약형태"
-									blockSelect="false" displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="column5" value="이메일"
-									blockSelect="false" displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="column4" value="연락처"
-									blockSelect="false" displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="column3" value="입사일"
-									blockSelect="false" displayMode="label">
-								</w2:column>
-								<w2:column width="70" style="" inputType="text" id="column13" value="재직상태"></w2:column>
-							</w2:row>
-						</w2:header>
-						<w2:gBody style="" id="gBody2">
-							<w2:row style="" id="row4">
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="EMP_NO" blockSelect="false"
-									displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="EMP_NM" blockSelect="false"
-									displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="DEPT_CD" blockSelect="false"
-									displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="DEPT_NM" blockSelect="false"
-									displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="POSITION_NM" blockSelect="false"
-									displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="JOB_GRADE" blockSelect="false"
-									displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="EMP_TYPE" blockSelect="false"
-									displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="EMAIL" blockSelect="false"
-									displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="PHONE" blockSelect="false"
-									displayMode="label">
-								</w2:column>
-								<w2:column removeBorderStyle="false" width="70" inputType="text" id="JOIN_DATE" blockSelect="false"
-									displayMode="label">
-								</w2:column>
-								<w2:column width="70" style="" inputType="text" id="STATUS" value=""></w2:column>
-							</w2:row>
-						</w2:gBody>
-					</w2:gridView>
-					<w2:pageList displayButtonType="display" displayFormat="#" pageSize="10" pagingType="0" style="height:30px;" id="pageList1"
-						class="pgl">
-					</w2:pageList>
+			<xf:group adaptiveThreshold="" class="" id="" style="display:flex; height:500px; gap:8px 5px;">
+				<xf:group id="" style="width:calc(20% - 5px); display:inline-block; height:430px; object-fit:contain;">
+					<xf:image ref="" src="/juhwi/img/img.jpg" alt="사진" style="display:block; width:100%; height:370px;" disabled="false"
+						id="" title="사진">
+					</xf:image>
+					<xf:group id="" style="display:flex; height:30px; gap:3px;">
+						<w2:textbox style="display:flex; min-width:4.5rem;" id="textbox23" label="※ 경로명 :" class=""></w2:textbox>
+						<xf:input disabled="true" style="display:flex; width:calc(100% - 4.5rem);" id="input21" placeholder="" class="" ref="data:dataListPersonal.PROFILE_IMG_PATH"></xf:input>
+					</xf:group>
+					<xf:group id="" style="display:flex; height:30px; gap:3px;">
+						<w2:textbox style="display:flex; min-width:4.5rem;" id="textbox24" label="※ 파일명 :" class=""></w2:textbox>
+						<xf:input disabled="true" style="display:flex; width:calc(100% - 4.5rem);" id="input22" placeholder="" class="" ref="data:dataListPersonal.PROFILE_IMG_NM"></xf:input>
+					</xf:group>
 				</xf:group>
-			<xf:group id="" style="display:inline-block; width:40%; height:430px;"><w2:gridView scrollByColumnAdaptive="false" focusMode="row" dataList="data:dataList1" scrollByColumn="false" style="height:400px; width:100%;" autoFit="allColumn" id="gridView1" class="gvw" checkReadOnlyOnPasteEnable="">
-					<w2:caption style="" id="caption3" value="this is a grid caption."></w2:caption>
+				<xf:group id="" style="width:100%;">
+					<xf:group style="display:inline-block; width:calc(50% - 5px); //height:430px; height:240px; margin-bottom:5px;" id="">
+						<xf:group id="" style="float:right;">
+							<xf:trigger style="" id="btn_educationAdd" label="행추가" type="button" class="btn_cm  row_add" ev:onclick="scwin.btn_educationAdd_onclick">
+								<xf:label><![CDATA[행추가]]></xf:label>
+							</xf:trigger>
+							<xf:trigger style="" id="btn_educationDelete" label="행삭제" type="button" class="btn_cm  row_del" ev:onclick="scwin.btn_educationDelete_onclick">
+								<xf:label><![CDATA[행삭제]]></xf:label>
+							</xf:trigger>
+							<xf:trigger class="btn_cm download" id="btn_educationDownload" style="" type="button" ev:onclick="scwin.btn_educationDownload_onclick">
+								<xf:label><![CDATA[다운로드]]></xf:label>
+							</xf:trigger>
+							<xf:trigger class="btn_cm  upload" id="btn_educationUpload" style="" type="button" ev:onclick="scwin.btn_educationUpload_onclick">
+								<xf:label><![CDATA[업로드]]></xf:label>
+							</xf:trigger>
+						</xf:group>
+						<w2:gridView scrollByColumnAdaptive="false" focusMode="row" dataList="data:dataListEducation" scrollByColumn="false"
+							style="width:100%; height:170px;" autoFit="allColumn" id="grp_education" class="gvw" checkReadOnlyOnPasteEnable="">
+							<w2:header style="" id="header2">
+								<w2:row style="" id="row3">
+									<w2:column width="30px" style="background:#e6e6e6;" inputType="checkbox" checkboxLabelFormatter=""
+										id="column20" value="" fixColumnWidth="true">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;"
+										id="column12" value="학교" blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;"
+										id="column11" value="졸업년도" blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;"
+										id="column10" value="학위구분" blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;"
+										id="column9" value="전공학과" blockSelect="false" displayMode="label">
+									</w2:column>
+								</w2:row>
+							</w2:header>
+							<w2:gBody style="" id="gBody2">
+								<w2:row style="" id="row4">
+									<w2:column width="70" style="" inputType="checkbox" id="CHK_YN" value="" dataType="boolean"></w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" id="SCHOOL_NM" blockSelect="false"
+										displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" id="GRAD_YEAR" blockSelect="false"
+										displayMode="label" editFormat="####" applyFormat="all">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" id="DEGREE_CD" blockSelect="false"
+										displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" id="MAJOR_NM" blockSelect="false"
+										displayMode="label">
+									</w2:column>
+								</w2:row>
+							</w2:gBody>
+						</w2:gridView>
+						<w2:pageList displayButtonType="display" displayFormat="#" pageSize="10" pagingType="0" style="height:30px;"
+							id="pageList1" class="pgl">
+						</w2:pageList>
+					</xf:group>
+					<xf:group style="display:inline-block; width:calc(50% - 5px); //height:430px; height:240px; margin-bottom:5px; margin-left:10px;" id="">
+						<xf:group style="float:right;" id="">
+							<xf:trigger style="" id="btn_licenseAdd" label="행추가" type="button" class="btn_cm  row_add" ev:onclick="scwin.btn_licenseAdd_onclick">
+								<xf:label><![CDATA[행추가]]></xf:label>
+							</xf:trigger>
+							<xf:trigger style="" id="btn_licenseDelete" label="행삭제" type="button" class="btn_cm  row_del" ev:onclick="scwin.btn_licenseDelete_onclick">
+								<xf:label><![CDATA[행삭제]]></xf:label>
+							</xf:trigger>
+							<xf:trigger style="" id="btn_licenseDownload" label="다운로드" type="button" class="btn_cm download" ev:onclick="scwin.btn_licenseDownload_onclick">
+								<xf:label><![CDATA[다운로드]]></xf:label>
+							</xf:trigger>
+							<xf:trigger class="btn_cm  upload" id="btn_licenseUpload" style="" type="button" ev:onclick="scwin.btn_licenseUpload_onclick">
+								<xf:label><![CDATA[업로드]]></xf:label>
+							</xf:trigger>
+						</xf:group>
+						<w2:gridView scrollByColumnAdaptive="false" focusMode="row" dataList="data:dataListLicense" scrollByColumn="false"
+							style="display:block; width:100%; //height:400px; height:170px;" autoFit="allColumn" id="grp_license" class="gvw"
+							checkReadOnlyOnPasteEnable="">
+							<w2:header style="" id="header2">
+								<w2:row style="" id="row3">
+									<w2:column width="30px" style="background:#e6e6e6;" inputType="checkbox" id="column14" value="" fixColumnWidth="true"></w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;"
+										id="column12" value="자격증명" blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;"
+										id="column11" value="발행처" blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;"
+										id="column10" value="취득일자" blockSelect="false" displayMode="label">
+									</w2:column>
+								</w2:row>
+							</w2:header>
+							<w2:gBody style="" id="gBody2">
+								<w2:row style="" id="row4">
+									<w2:column width="70" style="" inputType="checkbox" id="CHK_YN" value="" dataType="boolean"></w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="" id="LICENSE_NM"
+										blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="" id="ISSUER_NM"
+										blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="calendar" style="" id="ACQ_DATE"
+										blockSelect="false" displayMode="label">
+									</w2:column>
+								</w2:row>
+							</w2:gBody>
+						</w2:gridView>
+						<w2:pageList displayButtonType="display" displayFormat="#" pageSize="10" pagingType="0"
+							style="display:block; height:30px;" id="pageList2" class="pgl">
+						</w2:pageList>
+					</xf:group>
+					<xf:group style="display:inline-block; width:calc(50% - 5px); //height:430px; height:240px; margin-bottom:5px;" id="">
+						<xf:group style="float:right;" id="">
+							<xf:trigger style="" id="btn_tran_addR" label="행추가" type="button" class="btn_cm  row_add" ev:onclick="scwin.btn_tran_addR_onclick">
+								<xf:label><![CDATA[행추가]]></xf:label>
+							</xf:trigger>
+							<xf:trigger style="" id="btn_tran_del" label="행삭제" type="button" class="btn_cm  row_del" ev:onclick="scwin.btn_tran_del_onclick">
+								<xf:label><![CDATA[행삭제]]></xf:label>
+							</xf:trigger>
+							<xf:trigger style="" id="btn_tran_down" label="다운로드" type="button" class="btn_cm download" ev:onclick="scwin.btn_tran_down_onclick">
+								<xf:label><![CDATA[다운로드]]></xf:label>
+							</xf:trigger>
+							<xf:trigger class="btn_cm  upload" id="btn_tran_up" style="" type="button" ev:onclick="scwin.btn_tran_up_onclick">
+								<xf:label><![CDATA[업로드]]></xf:label>
+							</xf:trigger>
+						</xf:group>
+						<w2:gridView scrollByColumnAdaptive="false" focusMode="row" dataList="data:dataListTraining" scrollByColumn="false"
+							style="display:block; width:100%; //height:400px; height:170px;" autoFit="allColumn" id="grp_training" class="gvw"
+							checkReadOnlyOnPasteEnable="">
+							<w2:header style="" id="header2">
+								<w2:row style="" id="row3">
+									<w2:column width="30px" inputType="checkbox" style="background:#e6e6e6;" id="column14" value="" fixColumnWidth="true"></w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;"
+										id="column12" value="교육명" blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;"
+										id="column11" value="교육기관" blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;"
+										id="column10" value="시작년월" blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column16" value="종료년월"></w2:column>
+								</w2:row>
+							</w2:header>
+							<w2:gBody style="" id="gBody2">
+								<w2:row style="" id="row4">
+									<w2:column width="70" inputType="checkbox" style="" id="CHK_YN" value="" dataType="boolean"></w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="" id="EDU_NM"
+										blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="" id="EDU_ORG_NM"
+										blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="calendar" style="" id="START_YM"
+										blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column width="70" style="" inputType="calendar" id="END_YM" value=""></w2:column>
+								</w2:row>
+							</w2:gBody>
+						</w2:gridView>
+						<w2:pageList displayButtonType="display" displayFormat="#" pageSize="10" pagingType="0"
+							style="display:block; height:30px;" id="pageList4" class="pgl">
+						</w2:pageList>
+					</xf:group>
+					<xf:group style="display:inline-block; width:calc(50% - 5px); //height:430px; height:240px; margin-bottom:5px; margin-left:10px;" id="">
+						<xf:group style="float:right;" id="">
+							<xf:trigger style="" id="btn_skill_add" label="행추가" type="button" class="btn_cm  row_add" ev:onclick="scwin.btn_skill_add_onclick">
+								<xf:label><![CDATA[행추가]]></xf:label>
+							</xf:trigger>
+							<xf:trigger style="" id="btn_skill_del" label="행삭제" type="button" class="btn_cm  row_del" ev:ondblclick="" ev:onclick="scwin.btn_skill_del_onclick">
+								<xf:label><![CDATA[행삭제]]></xf:label>
+							</xf:trigger>
+							<xf:trigger style="" id="btn_skill_down" label="다운로드" type="button" class="btn_cm download" ev:onclick="scwin.btn_skill_down_onclick">
+								<xf:label><![CDATA[다운로드]]></xf:label>
+							</xf:trigger>
+							<xf:trigger class="btn_cm  upload" id="btn_skill_up" style="" type="button" ev:onclick="scwin.btn_skill_up_onclick">
+								<xf:label><![CDATA[업로드]]></xf:label>
+							</xf:trigger>
+						</xf:group>
+						<w2:gridView scrollByColumnAdaptive="false" focusMode="row" dataList="data:dataListSkill" scrollByColumn="false"
+							style="display:block; width:100%; //height:400px; height:170px;" autoFit="allColumn" id="grp_skill" class="gvw"
+							checkReadOnlyOnPasteEnable="">
+							<w2:header style="" id="header2">
+								<w2:row style="" id="row3">
+									<w2:column width="30px" inputType="checkbox" style="background:#e6e6e6;" id="column14" value="" fixColumnWidth="true"></w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;"
+										id="column12" value="보유기술(Skill)" blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;"
+										id="column11" value="숙련도" blockSelect="false" displayMode="label">
+									</w2:column>
+								</w2:row>
+							</w2:header>
+							<w2:gBody style="" id="gBody2">
+								<w2:row style="" id="row4">
+									<w2:column width="70" inputType="checkbox" style="" id="CHK_YN" value="" dataType="boolean"></w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="" id="SKILL_NM"
+										blockSelect="false" displayMode="label">
+									</w2:column>
+									<w2:column removeBorderStyle="false" width="70" inputType="text" style="" id="SKILL_LEVEL"
+										blockSelect="false" displayMode="label">
+									</w2:column>
+								</w2:row>
+							</w2:gBody>
+						</w2:gridView>
+						<w2:pageList displayButtonType="display" displayFormat="#" pageSize="10" pagingType="0"
+							style="display:block; height:30px;" id="pageList6" class="pgl">
+						</w2:pageList>
+					</xf:group>
+				</xf:group>
+			</xf:group>
+			<xf:group id="" class="pglbox" style="">
+				<xf:group class="titbox" id="" style="">
+					<w2:textbox class="" id="" label="SKILL INVENTORY" style="" tagname="h3"></w2:textbox>
+				</xf:group>
+			</xf:group>
+			<xf:group style="display:block; width:100%; height:240px;" id="">
+				<xf:group style="float:right;" id="">
+					<xf:trigger style="" id="btn_inv_add" label="행추가" type="button" class="btn_cm  row_add" ev:onclick="scwin.btn_inv_add_onclick">
+						<xf:label><![CDATA[행추가]]></xf:label>
+					</xf:trigger>
+					<xf:trigger style="" id="btn_inv_del" label="행삭제" type="button" class="btn_cm  row_del" ev:onclick="scwin.btn_inv_del_onclick">
+						<xf:label><![CDATA[행삭제]]></xf:label>
+					</xf:trigger>
+					<xf:trigger style="" id="btn_inv_down" label="다운로드" type="button" class="btn_cm download" ev:onclick="scwin.btn_inv_down_onclick">
+						<xf:label><![CDATA[다운로드]]></xf:label>
+					</xf:trigger>
+					<xf:trigger class="btn_cm  upload" id="btn_inv_up" style="" type="button" ev:onclick="scwin.btn_inv_up_onclick">
+						<xf:label><![CDATA[업로드]]></xf:label>
+					</xf:trigger>
+				</xf:group>
+				<w2:gridView scrollByColumnAdaptive="false" focusMode="row" dataList="data:dataListSkillInventory" scrollByColumn="false"
+					style="width:100%; height:170px;" autoFit="allColumn" id="grp_inv" class="gvw" checkReadOnlyOnPasteEnable="">
 					<w2:header style="" id="header2">
 						<w2:row style="" id="row3">
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column12" value="사번" blockSelect="false" displayMode="label">
+							<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;" id="column12"
+								label="학교" value="순서" blockSelect="false" displayMode="label" colSpan="" rowSpan="2">
 							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column11" value="이름" blockSelect="false" displayMode="label">
+							<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;" id="column11"
+								label="졸업년도" value="프로젝트명" blockSelect="false" displayMode="label" colSpan="" rowSpan="2">
 							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column10" value="부서코드" blockSelect="false" displayMode="label">
+							<w2:column removeBorderStyle="false" width="210" inputType="text" style="background:#e6e6e6;" id="column10"
+								label="학위구분" value="참여기간" blockSelect="false" displayMode="label" colSpan="3" rowSpan="">
 							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column9" value="부서명" blockSelect="false" displayMode="label">
+							<w2:column removeBorderStyle="false" width="70" inputType="text" style="background:#e6e6e6;" id="column9"
+								label="전공학과" value="역할" blockSelect="false" displayMode="label" colSpan="" rowSpan="2">
 							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column8" value="직급명" blockSelect="false" displayMode="label">
-							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column7" value="직위" blockSelect="false" displayMode="label">
-							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column6" value="계약형태" blockSelect="false" displayMode="label">
-							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column5" value="이메일" blockSelect="false" displayMode="label">
-							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column4" value="연락처" blockSelect="false" displayMode="label">
-							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column3" value="입사일" blockSelect="false" displayMode="label">
-							</w2:column>
-							<w2:column width="70" inputType="text" style="" id="column13" value="재직상태"></w2:column>
+							<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column68" value="고객사" colSpan="" rowSpan="2"></w2:column>
+							<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column65" value="소속사" colSpan="" rowSpan="2"></w2:column>
+							<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column62" value="분야" colSpan="" rowSpan="2"></w2:column>
+							<w2:column width="560" style="background:#e6e6e6;" inputType="text" id="column59" value="Skill Set" colSpan="8" rowSpan=""></w2:column>
+						</w2:row>
+						<w2:row style="" id="row5">
+							<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column14" value="시작"></w2:column>
+							<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column24" value="종료"></w2:column>
+							<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column21" value="개월"></w2:column>
+							<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column60" value="기종"></w2:column>
+							<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column57" value="OS"></w2:column>
+							<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column54" value="언어"></w2:column>
+							<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column51" value="DBMS"></w2:column>
+							<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column48" value="F/W"></w2:column>
+							<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column45" value="UI"></w2:column>
+							<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column42" value="Tool"></w2:column>
+							<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column39" value="기타"></w2:column>
 						</w2:row>
 					</w2:header>
 					<w2:gBody style="" id="gBody2">
 						<w2:row style="" id="row4">
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="EMP_NO" blockSelect="false" displayMode="label" style="height:400px;">
+							<w2:column removeBorderStyle="false" width="70" inputType="text" id="SORT_ORD" blockSelect="false"
+								displayMode="label" editFormat="##########">
 							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="EMP_NM" blockSelect="false" displayMode="label">
+							<w2:column removeBorderStyle="false" width="70" inputType="text" id="PROJECT_NM" blockSelect="false"
+								displayMode="label">
 							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="DEPT_CD" blockSelect="false" displayMode="label" style="display:inline-block; width:100%; height:400px;">
+							<w2:column removeBorderStyle="false" width="70" inputType="calendar" id="START_YM" blockSelect="false"
+								displayMode="label">
 							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="DEPT_NM" blockSelect="false" displayMode="label">
+							<w2:column width="70" style="" inputType="calendar" id="END_YM" value=""></w2:column>
+							<w2:column width="70" style="" inputType="text" id="column22" value=""></w2:column>
+							<w2:column removeBorderStyle="false" width="70" inputType="text" id="ROLE_NM" blockSelect="false"
+								displayMode="label">
 							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="POSITION_NM" blockSelect="false" displayMode="label">
-							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="JOB_GRADE" blockSelect="false" displayMode="label">
-							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="EMP_TYPE" blockSelect="false" displayMode="label">
-							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="EMAIL" blockSelect="false" displayMode="label">
-							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="PHONE" blockSelect="false" displayMode="label">
-							</w2:column>
-							<w2:column removeBorderStyle="false" width="70" inputType="text" id="JOIN_DATE" blockSelect="false" displayMode="label">
-							</w2:column>
-							<w2:column width="70" inputType="text" style="" id="STATUS" value=""></w2:column>
+							<w2:column width="70" style="" inputType="text" id="CLIENT_NM" value=""></w2:column>
+							<w2:column width="70" style="" inputType="text" id="COMPANY_NM" value=""></w2:column>
+							<w2:column width="70" style="" inputType="text" id="FIELD_NM" value=""></w2:column>
+							<w2:column width="70" style="" inputType="text" id="MACHINE_TYPE" value=""></w2:column>
+							<w2:column width="70" style="" inputType="text" id="OS_NM" value=""></w2:column>
+							<w2:column width="70" style="" inputType="text" id="LANG_NM" value=""></w2:column>
+							<w2:column width="70" style="" inputType="text" id="DBMS_NM" value=""></w2:column>
+							<w2:column width="70" style="" inputType="text" id="FRAMEWORK_NM" value=""></w2:column>
+							<w2:column width="70" style="" inputType="text" id="UI_NM" value=""></w2:column>
+							<w2:column width="70" style="" inputType="text" id="TOOL_NM" value=""></w2:column>
+							<w2:column width="70" style="" inputType="text" id="ETC" value=""></w2:column>
 						</w2:row>
 					</w2:gBody>
-				</w2:gridView><w2:pageList displayButtonType="display" displayFormat="#" pageSize="10" pagingType="0" style="height:30px;" id="pageList2" class="pgl">
-				</w2:pageList></xf:group></xf:group>
-			<xf:group id="" class="pglbox">
-				<xf:group class="titbox" id="" style="">
-					<w2:textbox class="" id="" label="SKILL INVENTORY" style="" tagname="h3"></w2:textbox>
-				</xf:group>
+				</w2:gridView>
+				<w2:pageList displayButtonType="display" displayFormat="#" pageSize="10" pagingType="0" style="height:30px;" id="pageList9"
+					class="pgl">
+				</w2:pageList>
 			</xf:group>
 			<xf:group class="btnbox" id="" style="">
 				<xf:group class="rt" id="" style="">
@@ -471,7 +898,6 @@ for (var i = 0; i < dl.getRowCount(); i++) {
 					</xf:trigger>
 				</xf:group>
 			</xf:group>
-
 		</xf:group>
 	</body>
 </html>

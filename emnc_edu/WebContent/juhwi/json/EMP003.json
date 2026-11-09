@@ -1,0 +1,50 @@
+
+{
+  "dataListEducation": {
+    "data": [
+      "EMP003", "부산중앙고등학교", "2014", "고등학교", "일반계열",
+      "EMP003", "중앙대학교", "2018", "학사", "경제학과"
+    ],
+    "columnInfo": ["EMP_CD", "SCHOOL_NM", "GRAD_YEAR", "DEGREE_CD", "MAJOR_NM"]
+  },
+  "dataListLicense": {
+    "data": [
+      "EMP003", "컴퓨터활용능력 1급", "대한상공회의소", "2018-03-10",
+      "EMP003", "유통관리사 2급", "대한상공회의소", "2019-06-15"
+    ],
+    "columnInfo": ["EMP_CD", "LICENSE_NM", "ISSUER_NM", "ACQ_DATE"]
+  },
+  "dataListTraining": {
+    "data": [
+      "EMP003", "영업 전략 및 협상 과정", "한국생산성본부", "202204", "202206",
+      "EMP003", "CRM 활용 실무과정", "한국HRD교육센터", "202309", "202310"
+    ],
+    "columnInfo": ["EMP_CD", "EDU_NM", "EDU_ORG_NM", "START_YM", "END_YM"]
+  },
+  "dataListSkill": {
+    "data": [
+      "EMP003", "영업관리", "상",
+      "EMP003", "고객관리", "상",
+      "EMP003", "데이터 분석", "중"
+    ],
+    "columnInfo": ["EMP_CD", "SKILL_NM", "SKILL_LEVEL"]
+  },
+  "dataListSkillInventory": {
+    "data": [
+      "EMP003", "1", "영업관리 시스템 고도화", "202201", "202208",
+      "업무 담당", "영업 기획", "XYZ상사", "ABC솔루션", "영업",
+      "PC", "Windows", "JavaScript", "Oracle", "기타",
+      "WebSquare", "Excel", "영업 프로세스 분석",
+      "EMP003", "2", "고객 데이터 분석 프로젝트", "202303", "202311",
+      "분석 담당", "고객 분석", "DEF그룹", "ABC솔루션", "영업",
+      "PC", "Windows", "Python", "PostgreSQL", "Pandas",
+      "Excel", "Power BI", "고객 데이터 분석 및 시각화"
+    ],
+    "columnInfo": [
+      "EMP_CD", "SORT_ORD", "PROJECT_NM", "START_YM", "END_YM",
+      "ROLE_NM", "COMPETENCY_NM", "CLIENT_NM", "COMPANY_NM",
+      "FIELD_NM", "MACHINE_TYPE", "OS_NM", "LANG_NM", "DBMS_NM",
+      "FRAMEWORK_NM", "UI_NM", "TOOL_NM", "ETC"
+    ]
+  }
+}

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:w2="http://www.inswave.com/websquare"
+	xmlns:xf="http://www.w3.org/2002/xforms">
+	<head>
+		<w2:type>COMPONENT</w2:type>
+		<w2:buildDate />
+		<w2:MSA />
+		<xf:model>
+			<w2:dataCollection baseNode="map">
+				<w2:dataList id="dataListPersonal" style="">
+					<w2:data xmlns="" use="false"></w2:data>
+					<w2:columnInfo>
+						<w2:column id="EMP_CD" name="name1" dataType="text"></w2:column>
+						<w2:column id="EMP_NM" name="name2" dataType="text"></w2:column>
+						<w2:column id="RRNO" name="name3" dataType="text"></w2:column>
+						<w2:column id="AGE" name="name4" dataType="text"></w2:column>
+						<w2:column id="GENDER" name="name5" dataType="text"></w2:column>
+						<w2:column id="POSITION_NM" name="name6" dataType="text"></w2:column>
+						<w2:column id="EMP_YN" name="name7" dataType="text"></w2:column>
+						<w2:column id="TECH_GRADE" name="name8" dataType="text"></w2:column>
+						<w2:column id="EMAIL" name="name9" dataType="text"></w2:column>
+						<w2:column id="MIL_TYPE" name="name10" dataType="text"></w2:column>
+						<w2:column id="MIL_START_DATE" name="name11" dataType="text"></w2:column>
+						<w2:column id="MIL_END_DATE" name="name12" dataType="text"></w2:column>
+						<w2:column id="MIL_NOTE" name="name13" dataType="text"></w2:column>
+						<w2:column id="DISABILITY_YN" name="name14" dataType="text"></w2:column>
+						<w2:column id="PHONE" name="name15" dataType="text"></w2:column>
+						<w2:column id="ADDRESS" name="name16" dataType="text"></w2:column>
+						<w2:column id="COMPANY_NM" name="name17" dataType="text"></w2:column>
+						<w2:column id="SEQ" name="name18" dataType="text"></w2:column>
+						<w2:column id="CHK_YN" name="name19" dataType="text"></w2:column>
+					</w2:columnInfo>
+				</w2:dataList>
+				<w2:dataMap baseNode="map" id="dataSearchParam">
+					<w2:keyInfo>
+						<w2:key id="SEARCH" name="name1" dataType="text"></w2:key>
+					</w2:keyInfo>
+				</w2:dataMap>
+			</w2:dataCollection>
+			<w2:workflowCollection></w2:workflowCollection>
+			<xf:submission id="submission2" action="http://127.0.0.1:62788/juhwi/json/EMP_PERSONAL_POPUP_EXTENDED.json" method="get"
+				mediatype="application/json" ref='data:json,{"action":"all","id":"dataListPersonal"}' target='data:array,{"action":"append","id":"dataListPersonal"}'
+				encoding="UTF-8" instance="" replace="" errorHandler="" customHandler="" mode="asynchronous" processMsg=""
+				ev:submit="scwin.submission2_submit" ev:submitdone="scwin.submission2_submitdone" ev:submiterror="" abortTrigger="">
+			</xf:submission>
+		</xf:model>
+		<w2:layoutInfo>
+		</w2:layoutInfo>
+		<w2:publicInfo method="" />
+		<script lazy="false" type="text/javascript"><![CDATA[scwin.onpageload = function() {
+};
+/**
+ * 데이터 클린 함수
+ */
+function fn_removeAll(){
+    console.log("초기화 버튼 클릭");
+    dataListPersonal.removeAll();
+}
+/**
+ * 직원 검색
+ */
+function fn_loadEmp(){
+    $p.executeSubmission("submission2");
+}
+
+/**
+ * 초기화 버튼
+ */
+scwin.btn_clear_onclick = function (e) {
+	fn_removeAll();
+};
+
+scwin.btn_search_onclick = function (e) {
+    fn_removeAll();
+    fn_loadEmp();
+};
+
+/**
+ * 행 추가
+ */
+function addRow(dataList){
+    dataList.insertRow(0);
+}
+
+/**
+ * 행 삭제
+ */
+function deleteRow(dataList){
+    var rowCount = dataList.getRowCount();
+    var deleteCount = 0;
+    for(var i = rowCount - 1; i >= 0; i--){
+        var chkYn = dataList.getCellData(i, "CHK_YN");
+        if(chkYn){
+            dataList.removeRow(i);
+            deleteCount++;
+        }
+    }
+    if(deleteCount == 0){
+        var idx = dataList.getRowPosition();
+        if(idx != null || idx != undefined){
+            dataList.removeRow(idx);
+            deleteCount++;
+        }
+    }
+    if(deleteCount == 0){
+        alert("삭제할 행이 없습니다.");
+    }else{
+        alert(deleteCount + "건이 삭제되었습니다.");
+    }
+}
+
+/**
+ * 액셀 다운로드
+ */
+function excelDownload(gridView){
+    var excelOpt = {};  // 엑셀 다운로드 옵션
+    excelOpt.fileName = "excelEduData.xls"; 
+    gridView.advancedExcelDownload(excelOpt);
+}
+/**
+ * 액셀 업로드
+ */
+function excelUpload(gridView){
+    var excelOpt = {};
+    excelOpt.startRowIndex = 1;
+    excelUpload(excelOpt, excelOpt);
+}
+
+
+
+// 학력
+function excelUpload(gridView, excelOpt){
+    // var excelOpt = {};  // 엑셀 다운로드 옵션
+    gridView.advancedExcelUpload(excelOpt);
+}
+
+scwin.btn_educationAdd_onclick = function (e) {
+    addRow(dataListPersonal);
+};
+scwin.btn_educationDelete_onclick = function (e) {
+    deleteRow(dataListPersonal);
+};
+scwin.btn_educationDownload_onclick = function (e) {
+    excelDownload(gridView1);
+};
+scwin.btn_educationUpload_onclick = function (e) {
+    excelUpload(gridView1);
+};
+
+
+scwin.gridView1_oncelldblclick = function (rowIndex, columnIndex, columnId) {
+    fn_selectAndClose();
+};
+
+/**
+ * 선택 후 종료
+ */
+function fn_selectAndClose(){
+    var rowPos = dataListPersonal.getRowPosition();
+    $p.parent().scwin.popup_closeAction(dataListPersonal.getCellData(rowPos, "EMP_CD"));
+    $p.closePopup();
+}
+scwin.btn_close_onclick = function () {
+    fn_selectAndClose();
+};
+
+scwin.btn_selectAndClose_onclick = function () {
+	fn_selectAndClose();
+};
+]]></script>
+	</head>
+	<body ev:onpageload="scwin.onpageload">
+		<xf:group class="sub_contents " id="btn_tran_add" style="">
+			<xf:group class="schbox" id="" style="display:block;">
+				<xf:group class="schbox_inner" id="" style="">
+					<xf:group id=""
+						style="display:inline-flex; flex-direction:row; flex-wrap:wrap; align-content:flex-start; align-items:center; gap:15px; width:100%; height:auto; box-sizing:border-box;">
+						<xf:group style="display:flex; width:17rem; height:31px; gap:8px;" id="">
+							<w2:textbox style="display:flex; align-items:center; width:6rem;" id="txt_kr_name" label="성명"
+								class="w2group w2tb_th">
+							</w2:textbox>
+							<xf:input ref="data:dataSearchParam.SEARCH" style="flex:1;" id="ipt_kr_name" placeholder="" class=""></xf:input>
+						</xf:group>
+						<xf:group style="position:absolute; right:5px;" id="" class="btn_schbox">
+							<xf:group style="" id="" class="btn_schbox">
+								<xf:trigger ev:onclick="scwin.btn_clear_onclick" disabled="" style="" id="trigger8" label="초기화"
+									type="button" class="btn_cm sch" escape="false">
+									<xf:label><![CDATA[초기화]]></xf:label>
+								</xf:trigger>
+								<xf:trigger ev:onclick="scwin.btn_search_onclick" disabled="" style="" id="trigger9" label="조회"
+									type="button" class="btn_cm sch" escape="false">
+									<xf:label><![CDATA[조회]]></xf:label>
+								</xf:trigger>
+							</xf:group>
+						</xf:group>
+						<xf:group id="" style="display:flex; gap:1rem;">
+							<w2:textbox style="display:flex; align-items:center; width:3rem;" id="textbox25" label="구분"
+								class="w2group w2tb_th">
+							</w2:textbox>
+							<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="" chooseOption="" disabled="false"
+								style="display:flex; width:5rem;" allOption="" id="" direction="auto">
+								<xf:choices>
+									<xf:item>
+										<xf:label><![CDATA[전체]]></xf:label>
+										<xf:value><![CDATA[]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[개발자]]></xf:label>
+										<xf:value><![CDATA[]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[담당자]]></xf:label>
+										<xf:value><![CDATA[]]></xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label><![CDATA[임직원]]></xf:label>
+										<xf:value><![CDATA[]]></xf:value>
+									</xf:item>
+								</xf:choices>
+							</xf:select1>
+						</xf:group>
+					</xf:group>
+				</xf:group>
+			</xf:group>
+			<xf:group id="" class="pglbox" style="">
+			</xf:group>
+			<xf:group style="display:block; width:100%; height:240px;" id="">
+				<xf:group id="" style="display:inline-block; width:100%; //height:430px; height:240px; margin-bottom:5px;">
+					<xf:group id="" style="float:right;">
+						<xf:trigger class="btn_cm  row_add" ev:onclick="scwin.btn_educationAdd_onclick" id="trigger10" label="행추가" style=""
+							type="button">
+							<xf:label><![CDATA[행추가]]></xf:label>
+						</xf:trigger>
+						<xf:trigger class="btn_cm  row_del" ev:onclick="scwin.btn_educationDelete_onclick" id="trigger11" label="행삭제"
+							style="" type="button">
+							<xf:label><![CDATA[행삭제]]></xf:label>
+						</xf:trigger>
+						<xf:trigger class="btn_cm download" ev:onclick="scwin.btn_educationDownload_onclick" id="trigger12" style=""
+							type="button">
+							<xf:label><![CDATA[다운로드]]></xf:label>
+						</xf:trigger>
+						<xf:trigger class="btn_cm  upload" ev:onclick="scwin.btn_educationUpload_onclick" id="trigger13" style=""
+							type="button">
+							<xf:label><![CDATA[업로드]]></xf:label>
+						</xf:trigger>
+					</xf:group>
+					<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="gvw" dataList="data:dataListPersonal"
+						focusMode="row" id="gridView1" scrollByColumn="false" scrollByColumnAdaptive="false" style="width:100%; height:170px;" readOnly="true" ev:oncellclick="scwin.gridView1_oncellclick" ev:oncelldblclick="scwin.gridView1_oncelldblclick">
+						<w2:header id="header2" style="">
+							<w2:row id="row3" style="">
+								<w2:column width="30px" style="background:#e6e6e6;" inputType="checkbox" id="column31" value=""></w2:column>
+								<w2:column checkboxLabelFormatter="" fixColumnWidth="true" id="column20" inputType="text"
+									style="background:#e6e6e6;" value="순번" width="60px">
+								</w2:column>
+								<w2:column blockSelect="false" displayMode="label" id="column12" inputType="text" removeBorderStyle="false"
+									style="background:#e6e6e6;" value="관련자ID" width="70">
+								</w2:column>
+								<w2:column blockSelect="false" displayMode="label" id="column11" inputType="text" removeBorderStyle="false"
+									style="background:#e6e6e6;" value="성명" width="70">
+								</w2:column>
+								<w2:column blockSelect="false" displayMode="label" id="column10" inputType="text" removeBorderStyle="false"
+									style="background:#e6e6e6;" value="회사명" width="70">
+								</w2:column>
+								<w2:column blockSelect="false" displayMode="label" id="column9" inputType="text" removeBorderStyle="false"
+									style="background:#e6e6e6;" value="직급" width="70">
+								</w2:column>
+								<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column29" value="개발자등급"></w2:column>
+								<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column27" value="나이"></w2:column>
+								<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column25" value="성별"></w2:column>
+								<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column21" value="전화번호"></w2:column>
+								<w2:column width="70" style="background:#e6e6e6;" inputType="text" id="column23" value="주민번호"></w2:column>
+							</w2:row>
+						</w2:header>
+						<w2:gBody id="gBody2" style="">
+							<w2:row id="row4" style="">
+								<w2:column width="70" style="" inputType="checkbox" id="CHK_YN" value=""></w2:column>
+								<w2:column dataType="boolean" id="SEQ" inputType="text" style="" value="" width="70" editFormat="##########">
+								</w2:column>
+								<w2:column blockSelect="false" displayMode="label" id="EMP_CD" inputType="text" removeBorderStyle="false"
+									width="70">
+								</w2:column>
+								<w2:column applyFormat="all" blockSelect="false" displayMode="label" editFormat="####" id="EMP_NM"
+									inputType="text" removeBorderStyle="false" width="70">
+								</w2:column>
+								<w2:column blockSelect="false" displayMode="label" id="COMPANY_NM" inputType="text" removeBorderStyle="false"
+									width="70">
+								</w2:column>
+								<w2:column blockSelect="false" displayMode="label" id="POSITION_NM" inputType="text"
+									removeBorderStyle="false" width="70">
+								</w2:column>
+								<w2:column width="70" style="" inputType="text" id="TECH_GRADE" value=""></w2:column>
+								<w2:column width="70" style="" inputType="text" id="AGE" value=""></w2:column>
+								<w2:column width="70" style="" inputType="text" id="GENDER" value=""></w2:column>
+								<w2:column width="70" style="" inputType="text" id="PHONE" value="" editFormat="###-####-####" applyFormat="all"></w2:column>
+								<w2:column width="70" style="" inputType="text" id="RRNO" value="" editFormat="{######}-{#######}" applyFormat="all"></w2:column>
+							</w2:row>
+						</w2:gBody>
+					</w2:gridView>
+					<w2:pageList class="pgl" displayButtonType="display" displayFormat="#" id="pageList10" pageSize="10" pagingType="0"
+						style="height:30px;">
+					</w2:pageList>
+				</xf:group>
+			</xf:group>
+			<xf:group class="btnbox" id="" style="">
+				<xf:group class="rt" id="" style="">
+					<w2:textbox class="bar_btndiv" id="" label="" style=""></w2:textbox>
+					<xf:trigger class="btn_cm pt" id="btn_selectAndClose" style="" type="button" ev:onclick="scwin.btn_selectAndClose_onclick">
+						<xf:label><![CDATA[선택]]></xf:label>
+					</xf:trigger>
+					<xf:trigger class="btn_cm " id="btn_close" style="" type="button" ev:onclick="scwin.btn_close_onclick">
+						<xf:label><![CDATA[닫기]]></xf:label>
+					</xf:trigger>
+				</xf:group>
+			</xf:group>
+		</xf:group>
+	</body>
+</html>

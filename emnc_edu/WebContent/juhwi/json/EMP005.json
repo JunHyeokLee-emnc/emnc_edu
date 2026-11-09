@@ -1,0 +1,50 @@
+
+{
+  "dataListEducation": {
+    "data": [
+      "EMP005", "대구여자고등학교", "2013", "고등학교", "일반계열",
+      "EMP005", "고려대학교", "2017", "석사", "산업공학과"
+    ],
+    "columnInfo": ["EMP_CD", "SCHOOL_NM", "GRAD_YEAR", "DEGREE_CD", "MAJOR_NM"]
+  },
+  "dataListLicense": {
+    "data": [
+      "EMP005", "정보처리기사", "한국산업인력공단", "2019-08-17",
+      "EMP005", "PMP", "PMI", "2022-05-12"
+    ],
+    "columnInfo": ["EMP_CD", "LICENSE_NM", "ISSUER_NM", "ACQ_DATE"]
+  },
+  "dataListTraining": {
+    "data": [
+      "EMP005", "프로젝트 관리 전문가 과정", "PMI 교육센터", "202205", "202207",
+      "EMP005", "서비스 기획 실무과정", "한국생산성본부", "202309", "202311"
+    ],
+    "columnInfo": ["EMP_CD", "EDU_NM", "EDU_ORG_NM", "START_YM", "END_YM"]
+  },
+  "dataListSkill": {
+    "data": [
+      "EMP005", "프로젝트 관리", "상",
+      "EMP005", "서비스 기획", "상",
+      "EMP005", "요구사항 분석", "중"
+    ],
+    "columnInfo": ["EMP_CD", "SKILL_NM", "SKILL_LEVEL"]
+  },
+  "dataListSkillInventory": {
+    "data": [
+      "EMP005", "1", "프로젝트 관리 플랫폼", "202301", "202310",
+      "PL", "프로젝트 관리", "DEF그룹", "ABC솔루션", "IT",
+      "PC", "Windows", "Java", "PostgreSQL", "Spring",
+      "React", "Jira", "일정 및 품질 관리",
+      "EMP005", "2", "서비스 운영 시스템 구축", "202311", "202406",
+      "PM", "서비스 기획", "XYZ상사", "ABC솔루션", "IT",
+      "PC", "Linux", "JavaScript", "Oracle", "Spring Boot",
+      "React", "Confluence", "요구사항 정의 및 운영 정책 수립"
+    ],
+    "columnInfo": [
+      "EMP_CD", "SORT_ORD", "PROJECT_NM", "START_YM", "END_YM",
+      "ROLE_NM", "COMPETENCY_NM", "CLIENT_NM", "COMPANY_NM",
+      "FIELD_NM", "MACHINE_TYPE", "OS_NM", "LANG_NM", "DBMS_NM",
+      "FRAMEWORK_NM", "UI_NM", "TOOL_NM", "ETC"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+
+{
+  "dataListEducation": {
+    "data": [
+      "EMP001", "서울중앙고등학교", "2009", "고등학교", "일반계열",
+      "EMP001", "서울대학교", "2013", "학사", "경영학과"
+    ],
+    "columnInfo": [
+      "EMP_CD", "SCHOOL_NM", "GRAD_YEAR", "DEGREE_CD", "MAJOR_NM"
+    ]
+  },
+  "dataListLicense": {
+    "data": [
+      "EMP001", "컴퓨터활용능력 1급", "대한상공회의소", "2014-05-10",
+      "EMP001", "직업상담사 2급", "한국산업인력공단", "2016-08-20"
+    ],
+    "columnInfo": [
+      "EMP_CD", "LICENSE_NM", "ISSUER_NM", "ACQ_DATE"
+    ]
+  },
+  "dataListTraining": {
+    "data": [
+      "EMP001", "인사관리 실무과정", "한국HR협회", "202301", "202303",
+      "EMP001", "노무관리 전문가 과정", "한국경영자총협회", "202406", "202408"
+    ],
+    "columnInfo": [
+      "EMP_CD", "EDU_NM", "EDU_ORG_NM", "START_YM", "END_YM"
+    ]
+  },
+  "dataListSkill": {
+    "data": [
+      "EMP001", "인사관리", "상",
+      "EMP001", "노무관리", "중",
+      "EMP001", "조직관리", "상"
+    ],
+    "columnInfo": [
+      "EMP_CD", "SKILL_NM", "SKILL_LEVEL"
+    ]
+  },
+  "dataListSkillInventory": {
+    "data": [
+      "EMP001", "1", "인사정보 통합 시스템", "202201", "202212",
+      "PM", "인사관리", "내부", "ABC솔루션", "인사",
+      "PC", "Windows", "Java", "Oracle", "Spring",
+      "WebSquare", "Eclipse", "시스템 총괄",
+
+      "EMP001", "2", "근태관리 시스템 개선", "202303", "202309",
+      "PL", "근태관리", "ABC전자", "ABC솔루션", "인사",
+      "PC", "Windows", "Java", "Oracle", "Spring Boot",
+      "WebSquare", "IntelliJ", "근태관리 기능 개선"
+    ],
+    "columnInfo": [
+      "EMP_CD", "SORT_ORD", "PROJECT_NM", "START_YM", "END_YM",
+      "ROLE_NM", "COMPETENCY_NM", "CLIENT_NM", "COMPANY_NM",
+      "FIELD_NM", "MACHINE_TYPE", "OS_NM", "LANG_NM", "DBMS_NM",
+      "FRAMEWORK_NM", "UI_NM", "TOOL_NM", "ETC"
+    ]
+  }
+}

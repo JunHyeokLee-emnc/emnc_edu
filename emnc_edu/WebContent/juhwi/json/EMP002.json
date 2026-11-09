@@ -1,0 +1,50 @@
+
+{
+  "dataListEducation": {
+    "data": [
+      "EMP002", "대전여자고등학교", "2012", "고등학교", "일반계열",
+      "EMP002", "연세대학교", "2016", "학사", "컴퓨터공학과"
+    ],
+    "columnInfo": ["EMP_CD", "SCHOOL_NM", "GRAD_YEAR", "DEGREE_CD", "MAJOR_NM"]
+  },
+  "dataListLicense": {
+    "data": [
+      "EMP002", "정보처리기사", "한국산업인력공단", "2017-11-15",
+      "EMP002", "SQLD", "한국데이터산업진흥원", "2019-04-20"
+    ],
+    "columnInfo": ["EMP_CD", "LICENSE_NM", "ISSUER_NM", "ACQ_DATE"]
+  },
+  "dataListTraining": {
+    "data": [
+      "EMP002", "Java 웹 개발 과정", "멀티캠퍼스", "202001", "202006",
+      "EMP002", "Spring Framework 실무", "한국소프트웨어교육원", "202203", "202205"
+    ],
+    "columnInfo": ["EMP_CD", "EDU_NM", "EDU_ORG_NM", "START_YM", "END_YM"]
+  },
+  "dataListSkill": {
+    "data": [
+      "EMP002", "Java", "상",
+      "EMP002", "Spring", "상",
+      "EMP002", "Oracle SQL", "중"
+    ],
+    "columnInfo": ["EMP_CD", "SKILL_NM", "SKILL_LEVEL"]
+  },
+  "dataListSkillInventory": {
+    "data": [
+      "EMP002", "1", "사내 업무 포털 구축", "202303", "202312",
+      "개발자", "웹 개발", "ABC전자", "ABC솔루션", "IT",
+      "PC", "Linux", "Java", "Oracle", "Spring Boot",
+      "WebSquare", "IntelliJ", "백엔드 및 화면 개발",
+      "EMP002", "2", "고객관리 시스템 개선", "202401", "202406",
+      "개발자", "시스템 고도화", "XYZ상사", "ABC솔루션", "IT",
+      "PC", "Linux", "JavaScript", "Oracle", "Spring",
+      "WebSquare", "Git", "화면 및 API 연동"
+    ],
+    "columnInfo": [
+      "EMP_CD", "SORT_ORD", "PROJECT_NM", "START_YM", "END_YM",
+      "ROLE_NM", "COMPETENCY_NM", "CLIENT_NM", "COMPANY_NM",
+      "FIELD_NM", "MACHINE_TYPE", "OS_NM", "LANG_NM", "DBMS_NM",
+      "FRAMEWORK_NM", "UI_NM", "TOOL_NM", "ETC"
+    ]
+  }
+}
